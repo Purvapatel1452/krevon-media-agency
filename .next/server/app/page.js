@@ -1,0 +1,13 @@
+var R=require("../chunks/ssr/[turbopack]_runtime.js")("server/app/page.js")
+R.c("server/chunks/ssr/[root-of-the-server]__04s9050._.js")
+R.c("server/chunks/ssr/1g2l_next_dist_esm_build_templates_app-page_0u2izjt.js")
+R.c("server/chunks/ssr/[root-of-the-server]__0_ap888._.js")
+R.c("server/chunks/ssr/[root-of-the-server]__1jpi4dn._.js")
+R.c("server/chunks/ssr/Desktop_AmazingMahesana_Krevon_app_layout_tsx_0rezwqm._.js")
+R.c("server/chunks/ssr/1g2l_next_dist_client_components_0-__jpp._.js")
+R.c("server/chunks/ssr/1g2l_next_dist_client_components_builtin_forbidden_206ajdv.js")
+R.c("server/chunks/ssr/1g2l_next_dist_client_components_builtin_unauthorized_01fc8bk.js")
+R.c("server/chunks/ssr/1g2l_next_dist_client_components_builtin_global-error_1zm4c3h.js")
+R.c("server/chunks/ssr/Desktop_AmazingMahesana_Krevon__next-internal_server_app_page_actions_1adi--k.js")
+R.m(73859)
+module.exports=R.m(73859).exports

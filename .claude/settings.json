@@ -3,7 +3,9 @@
     "allow": [
       "Bash(node -e \"require\\('playwright'\\)\")",
       "Bash(node -e \"const {chromium} = require\\('playwright'\\); console.log\\('playwright ok'\\)\")",
-      "Bash(node /tmp/krevon_verify.mjs)"
+      "Bash(node /tmp/krevon_verify.mjs)",
+      "Bash(npx create-next-app@latest KrevonNext --typescript --tailwind --eslint --app --no-src-dir --import-alias \"@/*\" --no-git)",
+      "Bash(npx create-next-app@latest krevon-nextjs --typescript --tailwind --eslint --app --no-src-dir --import-alias \"@/*\" --no-git)"
     ]
   }
 }
