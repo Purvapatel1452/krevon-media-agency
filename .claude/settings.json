@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(node -e \"require\\('playwright'\\)\")",
+      "Bash(node -e \"const {chromium} = require\\('playwright'\\); console.log\\('playwright ok'\\)\")",
+      "Bash(node /tmp/krevon_verify.mjs)"
+    ]
+  }
+}

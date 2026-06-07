@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+
+# Block access to build artifacts
+Disallow: /static/js/*.map
+
+# Sitemap location
+Sitemap: https://krevon.media/sitemap.xml
+
+# Crawl delay (optional – helps avoid server overload)
+Crawl-delay: 1
