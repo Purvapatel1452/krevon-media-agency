@@ -135,6 +135,51 @@ export default function Hero() {
             transition={{ duration: 0.7, delay: 0.25 }}
             className="lg:col-span-2 space-y-3"
           >
+            {/* Logo card */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.85 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="flex justify-center pb-2"
+            >
+              <div
+                className="relative"
+                style={{
+                  filter: 'drop-shadow(0 0 32px rgba(168,180,190,0.18)) drop-shadow(0 8px 24px rgba(0,0,0,0.6))',
+                }}
+              >
+                {/* Outer metallic ring */}
+                <div
+                  className="w-32 h-32 rounded-full p-0.5"
+                  style={{
+                    background: 'linear-gradient(145deg, rgba(200,212,222,0.6) 0%, rgba(168,180,190,0.2) 50%, rgba(100,120,130,0.5) 100%)',
+                    boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.15), 0 8px 32px rgba(0,0,0,0.6)',
+                  }}
+                >
+                  {/* Inner dark ring */}
+                  <div
+                    className="w-full h-full rounded-full p-0.5"
+                    style={{ background: '#0C0D0F' }}
+                  >
+                    <img
+                      src="/krevon_logo.jpg"
+                      alt="Krevon Media Agency"
+                      className="w-full h-full rounded-full object-cover"
+                    />
+                  </div>
+                </div>
+                {/* Live pulse ring */}
+                <div
+                  className="absolute inset-0 rounded-full"
+                  style={{
+                    background: 'transparent',
+                    border: '1px solid rgba(168,180,190,0.25)',
+                    animation: 'pulse 2.5s ease-in-out infinite',
+                  }}
+                />
+              </div>
+            </motion.div>
+
             {heroStats.map((stat, i) => (
               <motion.div
                 key={stat.label}

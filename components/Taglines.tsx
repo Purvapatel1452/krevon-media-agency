@@ -15,6 +15,28 @@ export default function Taglines() {
     <div className="py-14 md:py-20 relative overflow-hidden">
       <div className="metal-rule mb-10" />
       <div className="container">
+        {/* Logo divider */}
+        <div className="flex items-center justify-center mb-10">
+          <div className="flex-1 metal-rule" />
+          <div className="mx-6">
+            <div
+              className="w-14 h-14 rounded-full p-0.5 mx-auto"
+              style={{
+                background: 'linear-gradient(145deg, rgba(200,212,222,0.5) 0%, rgba(168,180,190,0.15) 50%, rgba(100,120,130,0.45) 100%)',
+                boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.1), 0 4px 16px rgba(0,0,0,0.5)',
+              }}
+            >
+              <div className="w-full h-full rounded-full p-0.5" style={{ background: '#0C0D0F' }}>
+                <img
+                  src="/krevon_logo.jpg"
+                  alt="Krevon Media Agency"
+                  className="w-full h-full rounded-full object-cover"
+                />
+              </div>
+            </div>
+          </div>
+          <div className="flex-1 metal-rule" />
+        </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-5xl mx-auto">
           {taglines.map((t, i) => (
             <motion.div

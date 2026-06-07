@@ -104,7 +104,7 @@ self.__SERVER_FILES_MANIFEST={
         "transform": "lodash/{{member}}"
       }
     },
-    "outputFileTracingRoot": "/Users/purvapatel",
+    "outputFileTracingRoot": "/Users/purvapatel/Desktop/AmazingMahesana/Krevon",
     "cacheComponents": false,
     "cacheLife": {
       "default": {
@@ -304,12 +304,12 @@ self.__SERVER_FILES_MANIFEST={
     "bundlePagesRouterDependencies": false,
     "configFileName": "next.config.ts",
     "turbopack": {
-      "root": "/Users/purvapatel"
+      "root": "/Users/purvapatel/Desktop/AmazingMahesana/Krevon"
     },
     "distDirRoot": ".next"
   },
   "appDir": "/Users/purvapatel/Desktop/AmazingMahesana/Krevon",
-  "relativeAppDir": "Desktop/AmazingMahesana/Krevon",
+  "relativeAppDir": "",
   "files": [
     ".next/package.json",
     ".next/routes-manifest.json",

@@ -33,6 +33,11 @@ export const metadata: Metadata = {
     description: 'Premium brand building and digital marketing agency in Mehsana, Gujarat.',
     images: ['/krevon_logo.jpg'],
   },
+  icons: {
+    icon: '/krevon_logo.jpg',
+    shortcut: '/krevon_logo.jpg',
+    apple: '/krevon_logo.jpg',
+  },
   robots: { index: true, follow: true },
   alternates: { canonical: 'https://krevon.in' },
 };

@@ -103,6 +103,30 @@ const PodcastStudio: React.FC = () => (
       >
         {/* Header */}
         <div className="text-center mb-14">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.85 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="flex justify-center mb-6"
+          >
+            <div
+              className="w-20 h-20 rounded-full p-0.5"
+              style={{
+                background: 'linear-gradient(145deg, rgba(200,212,222,0.5) 0%, rgba(168,180,190,0.15) 50%, rgba(100,120,130,0.45) 100%)',
+                boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.12), 0 6px 24px rgba(0,0,0,0.55)',
+                filter: 'drop-shadow(0 0 20px rgba(168,180,190,0.14))',
+              }}
+            >
+              <div className="w-full h-full rounded-full p-0.5" style={{ background: '#131518' }}>
+                <img
+                  src="/krevon_logo.jpg"
+                  alt="Krevon Media Agency"
+                  className="w-full h-full rounded-full object-cover"
+                />
+              </div>
+            </div>
+          </motion.div>
           <motion.span
             initial={{ opacity: 0, y: -8 }}
             whileInView={{ opacity: 1, y: 0 }}
