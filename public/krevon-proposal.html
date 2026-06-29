@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Krevon Media Agency — Proposal 2025</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',-apple-system,'Helvetica Neue',Arial,sans-serif;background:#d0d0d0;print-color-adjust:exact;-webkit-print-color-adjust:exact;}
+@page{size:A4 portrait;margin:0;}
+@media print{body{background:#fff;}.page{box-shadow:none!important;margin:0!important;}.no-print{display:none!important;}}
+.page{width:210mm;min-height:297mm;background:#fff;margin:0 auto 8mm;position:relative;page-break-after:always;break-after:page;overflow:hidden;box-shadow:0 4px 28px rgba(0,0,0,.16);}
+
+/* ══ COVER ══ */
+.cover{background:#fff;min-height:297mm;display:flex;flex-direction:column;padding:0;}
+
+.cv-bar{background:#0c0c0c;padding:4.5mm 14mm;display:flex;align-items:center;justify-content:space-between;}
+.cv-bar-l{font-size:7.5px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#555;}
+.cv-bar-r{font-size:7.5px;color:#444;letter-spacing:.06em;}
+
+.cv-body{flex:1;padding:12mm 14mm 10mm;display:flex;flex-direction:column;}
+.cv-logo-wrap{margin-bottom:10mm;}
+.cv-logo{width:90px;height:90px;border-radius:12px;overflow:hidden;border:1.5px solid #f0f0f0;display:flex;align-items:center;justify-content:center;background:#fff;}
+.cv-logo img{width:100%;height:100%;object-fit:contain;}
+
+.cv-eyebrow{font-size:8.5px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#aaa;margin-bottom:10px;}
+.cv-hero{font-size:54px;font-weight:900;line-height:.95;letter-spacing:-.04em;color:#0c0c0c;margin-bottom:6px;}
+.cv-hero span{display:block;}
+.cv-tagline{font-size:13px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:#888;margin-bottom:7mm;}
+.cv-rule{width:100%;height:1px;background:#e0e0e0;margin-bottom:7mm;}
+.cv-desc{font-size:12.5px;line-height:1.9;color:#555;max-width:125mm;margin-bottom:8mm;}
+.cv-backed{display:inline-flex;align-items:center;gap:8px;border:1.5px solid #0c0c0c;border-radius:3px;padding:5.5px 13px;width:fit-content;margin-bottom:10mm;}
+.cv-backed-micro{font-size:7.5px;font-weight:700;letter-spacing:.14em;color:#aaa;text-transform:uppercase;}
+.cv-backed-main{font-size:10px;font-weight:800;color:#0c0c0c;letter-spacing:.02em;}
+.cv-backed-logo{width:20px;height:20px;border-radius:4px;overflow:hidden;flex-shrink:0;border:1px solid #eee;}
+.cv-backed-logo img{width:100%;height:100%;object-fit:cover;}
+
+.cv-stats{display:flex;border-top:1px solid #e0e0e0;border-bottom:1px solid #e0e0e0;margin-bottom:8mm;}
+.cv-stat{flex:1;padding:6mm 0 6mm 5mm;border-right:1px solid #e0e0e0;}
+.cv-stat:last-child{border-right:none;}
+.cv-stat-v{font-size:22px;font-weight:900;color:#0c0c0c;line-height:1;margin-bottom:3px;letter-spacing:-.02em;}
+.cv-stat-l{font-size:7.5px;color:#aaa;letter-spacing:.04em;}
+
+.cv-btm{display:flex;justify-content:space-between;align-items:flex-end;}
+.cv-url{font-size:11.5px;font-weight:800;color:#0c0c0c;}
+.cv-contact{font-size:8px;color:#aaa;margin-top:3px;line-height:1.7;}
+.cv-conf{font-size:8px;color:#ccc;text-align:right;line-height:1.8;}
+
+/* ══ INNER ══ */
+.inner{padding:13mm 14mm 11mm;min-height:297mm;display:flex;flex-direction:column;}
+.ph{display:flex;align-items:center;justify-content:space-between;margin-bottom:9mm;padding-bottom:3.5mm;border-bottom:1px solid #ebebeb;}
+.ph-brand{display:flex;align-items:center;gap:8px;}
+.ph-logo{width:22px;height:22px;border-radius:5px;overflow:hidden;border:1px solid #eee;background:#fff;}
+.ph-logo img{width:100%;height:100%;object-fit:contain;}
+.ph-name{font-size:8px;font-weight:700;color:#bbb;letter-spacing:.12em;text-transform:uppercase;}
+.ph-num{font-size:8.5px;color:#ccc;}
+
+.slabel{font-size:7.5px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#bbb;margin-bottom:4px;}
+.stitle{font-size:22px;font-weight:900;color:#0c0c0c;letter-spacing:-.015em;margin-bottom:7mm;padding-left:9px;border-left:3px solid #0c0c0c;}
+.body{font-size:10px;line-height:1.9;color:#444;}
+.hr{height:1px;background:#ebebeb;margin:5mm 0;}
+
+.cbox{background:#0c0c0c;color:#fff;padding:5.5mm 7mm;border-radius:5px;margin-bottom:5mm;}
+.cbox-t{font-size:10.5px;font-weight:700;margin-bottom:3px;}
+.cbox-d{font-size:9px;color:#888;line-height:1.75;}
+
+.two{display:grid;grid-template-columns:1fr 1fr;gap:6mm;}
+.four{display:flex;gap:3mm;}
+.mini{flex:1;padding:4.5mm;background:#f6f6f6;border:1px solid #eaeaea;border-radius:6px;text-align:center;}
+.mini-dark{flex:2;padding:4.5mm;background:#0c0c0c;border-radius:6px;text-align:center;}
+
+.svc-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:3mm;}
+.svc{display:flex;align-items:flex-start;gap:7px;padding:4.5mm;background:#f6f6f6;border-radius:6px;border:1px solid #eaeaea;}
+.svc-n{font-size:14px;font-weight:900;color:#e0e0e0;line-height:1;flex-shrink:0;width:18px;}
+.svc-title{font-size:9.5px;font-weight:700;color:#0c0c0c;margin-bottom:2px;}
+.svc-desc{font-size:8px;color:#888;line-height:1.5;}
+
+.tbl{width:100%;border-collapse:collapse;font-size:9px;}
+.tbl th{background:#0c0c0c;color:#fff;padding:6px 10px;text-align:left;font-size:7.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;}
+.tbl td{padding:5.5px 10px;border-bottom:1px solid #f2f2f2;color:#444;vertical-align:top;}
+.tbl tr:nth-child(even) td{background:#fafafa;}
+.tbl tr:first-child td{font-weight:700;color:#0c0c0c;background:#f0f0f0;}
+
+.ptbl{width:100%;border-collapse:collapse;font-size:9px;}
+.ptbl th{background:#0c0c0c;color:#fff;padding:7px 11px;text-align:left;font-size:7.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;}
+.ptbl td{padding:7px 11px;border-bottom:1px solid #f2f2f2;color:#444;vertical-align:top;line-height:1.5;}
+.ptbl .fr td{background:#1a1a1a;color:#fff;font-weight:600;}
+.ptbl .fr .tag{display:inline-block;background:#fff;color:#0c0c0c;font-size:6.5px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:2px 5px;border-radius:2px;margin-left:5px;vertical-align:middle;}
+
+.why-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:3.5mm;}
+.why{padding:5mm;border:1px solid #eaeaea;border-radius:6px;}
+.why-t{font-size:9.5px;font-weight:700;color:#0c0c0c;margin-bottom:3px;}
+.why-d{font-size:8.5px;color:#888;line-height:1.6;}
+
+.ct-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:3mm;}
+.ct{display:flex;flex-direction:column;gap:2px;padding:4mm;background:#f6f6f6;border-radius:6px;}
+.ct-l{font-size:7px;font-weight:700;color:#bbb;text-transform:uppercase;letter-spacing:.1em;}
+.ct-v{font-size:9.5px;font-weight:700;color:#0c0c0c;line-height:1.4;}
+
+.checks{display:grid;grid-template-columns:repeat(3,1fr);gap:2.5mm;}
+.ch{display:flex;align-items:center;gap:5px;font-size:8.5px;color:#555;}
+
+.pf{margin-top:auto;padding-top:5mm;border-top:1px solid #f0f0f0;display:flex;justify-content:space-between;align-items:center;}
+.pf-t{font-size:7.5px;color:#ccc;letter-spacing:.06em;text-transform:uppercase;}
+
+.print-btn{position:fixed;bottom:24px;right:24px;background:#0c0c0c;color:#fff;border:none;padding:12px 26px;font-family:'Inter',sans-serif;font-size:13px;font-weight:700;border-radius:6px;cursor:pointer;z-index:999;box-shadow:0 4px 16px rgba(0,0,0,.25);}
+.print-btn:hover{background:#333;}
+</style>
+</head>
+<body>
+<button class="print-btn no-print" onclick="window.print()">⬇ Save as PDF</button>
+
+<!-- ═══════════════════════════════
+     PAGE 1 · COVER
+═══════════════════════════════ -->
+<div class="page cover">
+  <div class="cv-bar">
+    <span class="cv-bar-l">Agency Proposal — 2025</span>
+    <span class="cv-bar-r">Confidential &nbsp;|&nbsp; Krevon Media Agency</span>
+  </div>
+
+  <div class="cv-body">
+    <div class="cv-logo-wrap">
+      <div class="cv-logo"><img src="./krevon_logo.jpg" alt="Krevon Media Agency"></div>
+    </div>
+
+    <div class="cv-eyebrow">Digital Marketing &amp; Brand Production Agency</div>
+    <div class="cv-hero">
+      <span>Krevon</span>
+      <span>Media</span>
+      <span>Agency</span>
+    </div>
+    <div class="cv-tagline">BUILD BRANDS THAT GROW.</div>
+    <div class="cv-rule"></div>
+    <div class="cv-desc">
+      We are a full-service digital marketing and creative production agency — built to take brands from invisible to unforgettable. Strategy, content, design, and paid ads — all under one roof in Mehsana, Gujarat.
+    </div>
+
+    <div class="cv-backed">
+      <div>
+        <div class="cv-backed-micro">Powered by</div>
+        <div class="cv-backed-main">Amazing Mahesana Media</div>
+      </div>
+      <div class="cv-backed-logo"><img src="./amazingMehsana.jpg" alt="AM"></div>
+    </div>
+
+    <div class="cv-stats">
+      <div class="cv-stat"><div class="cv-stat-v">31K+</div><div class="cv-stat-l">Instagram Followers (Own Page)</div></div>
+      <div class="cv-stat"><div class="cv-stat-v">11</div><div class="cv-stat-l">In-House Team Members</div></div>
+      <div class="cv-stat"><div class="cv-stat-v">100+</div><div class="cv-stat-l">Brand Collaborations</div></div>
+      <div class="cv-stat"><div class="cv-stat-v">3+</div><div class="cv-stat-l">Years Active</div></div>
+    </div>
+
+    <div class="cv-btm">
+      <div>
+        <div class="cv-url">krevon.media &nbsp;·&nbsp; @krevon.media</div>
+        <div class="cv-contact">krevonmedia@gmail.com &nbsp;·&nbsp; +91 92271 44346<br>SF-215, Silicon Sponta, Radhanpur Road, Mehsana 384002</div>
+      </div>
+      <div class="cv-conf">Gujarat's 1st Award-Winning<br>City Page (Amazing Mahesana)</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════
+     PAGE 2 · ABOUT KREVON
+═══════════════════════════════ -->
+<div class="page inner">
+  <div class="ph">
+    <div class="ph-brand"><div class="ph-logo"><img src="./krevon_logo.jpg" alt="KM"></div><span class="ph-name">Krevon Media Agency</span></div>
+    <span class="ph-num">02 / 06</span>
+  </div>
+  <div class="slabel">Who We Are</div>
+  <div class="stitle">About Krevon Media Agency</div>
+  <p class="body" style="margin-bottom:4.5mm;">Krevon Media Agency is a full-service creative and digital marketing agency based in Mehsana, Gujarat. We specialize in building brands that create <strong>real impact</strong> — through bold creative, strategic marketing, and precision-targeted advertising.</p>
+  <p class="body" style="margin-bottom:5mm;">We handle everything in-house: from brand identity and video production to social media management, paid advertising, and e-commerce support. No outsourcing. One team, full accountability, consistent quality.</p>
+  <div class="hr"></div>
+  <div class="slabel" style="margin-bottom:4mm;">Backed by Amazing Mahesana Media</div>
+  <div class="cbox">
+    <div class="cbox-t">&#127942; The Proof Behind The Promise</div>
+    <div class="cbox-d">Krevon Media Agency is the creative production arm of <strong style="color:#ccc;">Amazing Mahesana</strong> — Gujarat's 1st Award-Winning City Page with 31,000+ organic Instagram followers. Every strategy, content format, and growth framework we apply to client accounts has already been validated on our own platform. You're not hiring an agency still figuring things out — you're hiring a team that has already proven the results.</div>
+  </div>
+  <div class="two" style="margin-bottom:5mm;">
+    <div>
+      <div class="slabel" style="margin-bottom:3.5mm;">Our Mission</div>
+      <p class="body">Every brand — regardless of size — deserves world-class creative and strategy. We exist to deliver exactly that, making our clients impossible to ignore in their market.</p>
+    </div>
+    <div>
+      <div class="slabel" style="margin-bottom:3.5mm;">Our Approach</div>
+      <p class="body">Data-first strategy. Cinematic-quality production. Transparent reporting. We treat every client's brand as if it were our own — because that's how we built our own 31K+ audience.</p>
+    </div>
+  </div>
+  <div class="four">
+    <div class="mini"><div style="font-size:18px;font-weight:900;color:#0c0c0c;">2021</div><div style="font-size:7.5px;color:#aaa;margin-top:2px;">Founded</div></div>
+    <div class="mini"><div style="font-size:18px;font-weight:900;color:#0c0c0c;">11</div><div style="font-size:7.5px;color:#aaa;margin-top:2px;">Team Members</div></div>
+    <div class="mini"><div style="font-size:18px;font-weight:900;color:#0c0c0c;">10+</div><div style="font-size:7.5px;color:#aaa;margin-top:2px;">Services</div></div>
+    <div class="mini-dark"><div style="font-size:9.5px;font-weight:700;color:#fff;margin-bottom:3px;">"BUILD BRANDS THAT GROW."</div><div style="font-size:8px;color:#555;">Mehsana, Gujarat · India</div></div>
+  </div>
+  <div class="pf"><span class="pf-t">Confidential — Krevon Media Agency Proposal 2025</span><span class="pf-t">krevon.media</span></div>
+</div>
+
+<!-- ═══════════════════════════════
+     PAGE 3 · SERVICES
+═══════════════════════════════ -->
+<div class="page inner">
+  <div class="ph">
+    <div class="ph-brand"><div class="ph-logo"><img src="./krevon_logo.jpg" alt="KM"></div><span class="ph-name">Krevon Media Agency</span></div>
+    <span class="ph-num">03 / 06</span>
+  </div>
+  <div class="slabel">What We Deliver</div>
+  <div class="stitle">Our Services</div>
+  <div class="svc-grid" style="margin-bottom:5mm;">
+    <div class="svc"><span class="svc-n">01</span><div><div class="svc-title">Brand Building</div><div class="svc-desc">Full brand identity development — logo, color systems, typography, brand voice, tone, and visual guidelines that make your business memorable.</div></div></div>
+    <div class="svc"><span class="svc-n">02</span><div><div class="svc-title">Digital Marketing</div><div class="svc-desc">End-to-end digital marketing strategy — platform selection, audience research, content planning, and performance optimization across all channels.</div></div></div>
+    <div class="svc"><span class="svc-n">03</span><div><div class="svc-title">Graphic Design</div><div class="svc-desc">Social creatives, posters, banners, brochures, pitch decks, and brand collateral — designed with precision and branded consistency.</div></div></div>
+    <div class="svc"><span class="svc-n">04</span><div><div class="svc-title">Video Editing</div><div class="svc-desc">Post-production for reels, brand films, product videos, event highlights, and testimonials — cinematic quality with fast delivery.</div></div></div>
+    <div class="svc"><span class="svc-n">05</span><div><div class="svc-title">Marketing Strategy</div><div class="svc-desc">Monthly content calendars, competitive analysis, campaign planning, launch strategies, and quarterly growth roadmaps built around your goals.</div></div></div>
+    <div class="svc"><span class="svc-n">06</span><div><div class="svc-title">Social Media Marketing</div><div class="svc-desc">Full management of Instagram, Facebook, LinkedIn, YouTube — content creation, daily posting, community management, and growth execution.</div></div></div>
+    <div class="svc"><span class="svc-n">07</span><div><div class="svc-title">Influencer Marketing</div><div class="svc-desc">Nano-to-macro influencer identification, outreach, contract management, briefing, and full campaign execution with detailed ROI reporting.</div></div></div>
+    <div class="svc"><span class="svc-n">08</span><div><div class="svc-title">Facebook &amp; Instagram Ads</div><div class="svc-desc">Precision-targeted Meta campaigns — lead generation, product promotion, brand awareness, event marketing, and retargeting funnels.</div></div></div>
+    <div class="svc"><span class="svc-n">09</span><div><div class="svc-title">Google Ads</div><div class="svc-desc">Search, display, YouTube, and Shopping campaigns — keyword research, ad copy, A/B testing, and continuous performance optimization.</div></div></div>
+    <div class="svc"><span class="svc-n">10</span><div><div class="svc-title">Video Production</div><div class="svc-desc">Full-production video shoots — brand films, product launches, event coverage, testimonials, reels — concept to final delivery.</div></div></div>
+  </div>
+  <div class="cbox" style="margin-bottom:0;">
+    <div class="cbox-t">One Team. All Services. Zero Outsourcing.</div>
+    <div class="cbox-d">Every service listed above is delivered by our in-house team. Videographers, editors, voice artists, strategists, and designers — all under one roof at our Mehsana office. This means faster turnaround, consistent quality, and direct accountability.</div>
+  </div>
+  <div class="pf"><span class="pf-t">Confidential — Krevon Media Agency Proposal 2025</span><span class="pf-t">krevon.media</span></div>
+</div>
+
+<!-- ═══════════════════════════════
+     PAGE 4 · TEAM
+═══════════════════════════════ -->
+<div class="page inner">
+  <div class="ph">
+    <div class="ph-brand"><div class="ph-logo"><img src="./krevon_logo.jpg" alt="KM"></div><span class="ph-name">Krevon Media Agency</span></div>
+    <span class="ph-num">04 / 06</span>
+  </div>
+  <div class="slabel">The People Behind Your Brand</div>
+  <div class="stitle">Our Team</div>
+  <p class="body" style="margin-bottom:5mm;">A dedicated in-house team of 11 specialists — every role filled, no freelancers, all operating from our office in Mehsana. When you work with Krevon, you work with a full production unit that operates with zero compromise on quality or timelines.</p>
+  <table class="tbl" style="margin-bottom:5mm;">
+    <thead><tr><th>#</th><th>Name</th><th>Role</th><th>Specialization</th></tr></thead>
+    <tbody>
+      <tr><td>01</td><td><strong>Nikhil Patel</strong></td><td>Founder</td><td>Strategy, Brand Vision, Client Growth</td></tr>
+      <tr><td>02</td><td>Boni Patel</td><td>Cinematographer &amp; Editor</td><td>Cinematic Shoots, Post-Production, Colour Grading</td></tr>
+      <tr><td>03</td><td>Darshan Panchal</td><td>Technical Support</td><td>Platform Management, Digital Infrastructure</td></tr>
+      <tr><td>04</td><td>Darshan Sathwara</td><td>Content Strategist</td><td>Content Planning, Copywriting, Hashtag Strategy</td></tr>
+      <tr><td>05</td><td>Daxis Patel</td><td>Voice Artist &amp; Script Writer</td><td>Voice-Over Production, Script Writing, Narration</td></tr>
+      <tr><td>06</td><td>Dev Patel</td><td>Creative Director</td><td>Campaign Direction, Visual Identity, Creative Strategy</td></tr>
+      <tr><td>07</td><td>Dev Soni</td><td>Videographer</td><td>Visual Storytelling, Short-Form Content, Reels</td></tr>
+      <tr><td>08</td><td>Maan Prajapati</td><td>Team Coordinator &amp; Videographer</td><td>Production Coordination, Videography</td></tr>
+      <tr><td>09</td><td>Nakshatra</td><td>Video Editor</td><td>Advanced Editing, 4+ Years Experience, Brand Films</td></tr>
+      <tr><td>10</td><td>Purv Patel</td><td>IT Manager</td><td>Systems, Software, Technical Operations</td></tr>
+      <tr><td>11</td><td>Vivek Vyas</td><td>Videographer</td><td>Brand Video, Reels, Event Shoots</td></tr>
+    </tbody>
+  </table>
+  <div class="four">
+    <div class="mini"><div style="font-size:18px;font-weight:900;color:#0c0c0c;">11</div><div style="font-size:7.5px;color:#aaa;margin-top:2px;">Team Members</div></div>
+    <div class="mini"><div style="font-size:18px;font-weight:900;color:#0c0c0c;">100%</div><div style="font-size:7.5px;color:#aaa;margin-top:2px;">In-House</div></div>
+    <div class="mini"><div style="font-size:14px;font-weight:900;color:#0c0c0c;line-height:1.1;">Mehsana<br>Gujarat</div><div style="font-size:7.5px;color:#aaa;margin-top:2px;">Office</div></div>
+    <div class="mini-dark"><div style="font-size:9.5px;font-weight:700;color:#fff;margin-bottom:3px;">"BUILD BRANDS THAT GROW."</div><div style="font-size:8px;color:#555;">Powered by Amazing Mahesana Media</div></div>
+  </div>
+  <div class="pf"><span class="pf-t">Confidential — Krevon Media Agency Proposal 2025</span><span class="pf-t">krevon.media</span></div>
+</div>
+
+<!-- ═══════════════════════════════
+     PAGE 5 · PACKAGES + WHY KREVON
+═══════════════════════════════ -->
+<div class="page inner">
+  <div class="ph">
+    <div class="ph-brand"><div class="ph-logo"><img src="./krevon_logo.jpg" alt="KM"></div><span class="ph-name">Krevon Media Agency</span></div>
+    <span class="ph-num">05 / 06</span>
+  </div>
+  <div class="slabel">Investment</div>
+  <div class="stitle">Our Packages</div>
+  <table class="ptbl" style="margin-bottom:5.5mm;">
+    <thead><tr><th>Package</th><th>Deliverables / Month</th><th>Best For</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Starter Growth</strong></td><td>8 Reels, story management, hashtag &amp; caption strategy, monthly report</td><td>New businesses launching their digital presence</td></tr>
+      <tr class="fr"><td><strong>Business Growth</strong><span class="tag">Most Popular</span></td><td>15 Reels, full strategy, content calendar, festival posts, engagement, weekly reports</td><td>Growing brands focused on consistent results</td></tr>
+      <tr><td><strong>Brand Authority</strong></td><td>20 Reels, multi-platform management, influencer campaigns, Shopify/Amazon support</td><td>Established brands — multiple platforms &amp; e-commerce</td></tr>
+      <tr><td><strong>Custom Enterprise</strong></td><td>Dedicated team, paid ads, video production, branding, full-service delivery</td><td>International brands &amp; large-scale campaigns</td></tr>
+    </tbody>
+  </table>
+  <div class="slabel" style="margin-bottom:3mm;">Why Choose Krevon</div>
+  <div class="why-grid" style="margin-bottom:5mm;">
+    <div class="why"><div class="why-t">Battle-Tested Growth Strategy</div><div class="why-d">We validated our growth methodology on our own 31K+ page before applying it to any client. Real proof — not theory.</div></div>
+    <div class="why"><div class="why-t">Full In-House Production</div><div class="why-d">All branding, video, editing, voice-over, and ad creative is produced in-house by our 12-person team. No outsourcing.</div></div>
+    <div class="why"><div class="why-t">Award-Winning Background</div><div class="why-d">Powered by Amazing Mahesana — Gujarat's 1st Award-Winning City Page. We have the recognition to prove our quality.</div></div>
+    <div class="why"><div class="why-t">Weekly Transparent Reporting</div><div class="why-d">Real metrics every week — reach, engagement, growth, leads. No vague summaries, no surprises.</div></div>
+    <div class="why"><div class="why-t">Premium Quality, Competitive Pricing</div><div class="why-d">International-standard production delivered at Indian pricing — a significant advantage for any scaling brand.</div></div>
+    <div class="why"><div class="why-t">Dedicated Account Manager</div><div class="why-d">One point of contact. WhatsApp support. You always know exactly what's happening with your brand.</div></div>
+  </div>
+  <div class="pf"><span class="pf-t">Confidential — Krevon Media Agency Proposal 2025</span><span class="pf-t">krevon.media</span></div>
+</div>
+
+<!-- ═══════════════════════════════
+     PAGE 6 · CONTACT + CTA
+═══════════════════════════════ -->
+<div class="page inner">
+  <div class="ph">
+    <div class="ph-brand"><div class="ph-logo"><img src="./krevon_logo.jpg" alt="KM"></div><span class="ph-name">Krevon Media Agency</span></div>
+    <span class="ph-num">06 / 06</span>
+  </div>
+  <div class="slabel">Next Steps</div>
+  <div class="stitle">Let's Build Your Brand</div>
+  <p class="body" style="margin-bottom:6mm;">We'd love to understand your brand, your goals, and where you want to be in the next 12 months. The next step is a short discovery call — no commitments, just clarity on how Krevon can help you grow.</p>
+  <div class="cbox" style="margin-bottom:6mm;">
+    <div class="cbox-t">Your Onboarding Journey — 4 Simple Steps</div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:5mm;margin-top:5mm;">
+      <div style="text-align:center;"><div style="font-size:20px;font-weight:900;color:#fff;margin-bottom:4px;">01</div><div style="font-size:8px;font-weight:700;color:#fff;margin-bottom:3px;">Discovery Call</div><div style="font-size:7.5px;color:#666;">Understand your goals &amp; brand</div></div>
+      <div style="text-align:center;"><div style="font-size:20px;font-weight:900;color:#fff;margin-bottom:4px;">02</div><div style="font-size:8px;font-weight:700;color:#fff;margin-bottom:3px;">Proposal Review</div><div style="font-size:7.5px;color:#666;">Custom plan for your brand</div></div>
+      <div style="text-align:center;"><div style="font-size:20px;font-weight:900;color:#fff;margin-bottom:4px;">03</div><div style="font-size:8px;font-weight:700;color:#fff;margin-bottom:3px;">Onboarding</div><div style="font-size:7.5px;color:#666;">Account access, assets, briefing</div></div>
+      <div style="text-align:center;"><div style="font-size:20px;font-weight:900;color:#fff;margin-bottom:4px;">04</div><div style="font-size:8px;font-weight:700;color:#fff;margin-bottom:3px;">Launch</div><div style="font-size:7.5px;color:#666;">We go live — Day 1 results</div></div>
+    </div>
+  </div>
+  <div class="slabel" style="margin-bottom:3.5mm;">Contact Us</div>
+  <div class="ct-grid" style="margin-bottom:6mm;">
+    <div class="ct"><div class="ct-l">Agency</div><div class="ct-v">Krevon Media Agency</div></div>
+    <div class="ct"><div class="ct-l">WhatsApp / Phone</div><div class="ct-v">+91 92271 44346</div></div>
+    <div class="ct"><div class="ct-l">Email</div><div class="ct-v" style="font-size:8.5px;">krevonmedia@gmail.com</div></div>
+    <div class="ct"><div class="ct-l">Instagram</div><div class="ct-v">@krevon.media</div></div>
+    <div class="ct"><div class="ct-l">Powered By</div><div class="ct-v" style="font-size:8.5px;">@amazingmahesana</div></div>
+    <div class="ct"><div class="ct-l">Office Address</div><div class="ct-v" style="font-size:8px;">SF-215, Silicon Sponta<br>Radhanpur Road, Mehsana 384002</div></div>
+  </div>
+  <div style="background:#0c0c0c;border-radius:7px;padding:6.5mm 8mm;display:flex;align-items:center;justify-content:space-between;">
+    <div>
+      <div style="font-size:16px;font-weight:900;color:#fff;margin-bottom:5px;letter-spacing:-.01em;">Ready to build a brand that grows?</div>
+      <div style="font-size:9px;color:#666;">WhatsApp us or email to schedule your free discovery call. We'll respond within 24 hours.</div>
+    </div>
+    <div style="text-align:right;flex-shrink:0;margin-left:8mm;">
+      <div style="font-size:11px;font-weight:800;color:#fff;">+91 92271 44346</div>
+      <div style="font-size:8px;color:#555;margin-top:4px;">BUILD BRANDS THAT GROW.</div>
+    </div>
+  </div>
+  <div class="pf"><span class="pf-t">Confidential — Krevon Media Agency Proposal 2025</span><span class="pf-t">krevon.media</span></div>
+</div>
+
+</body>
+</html>
