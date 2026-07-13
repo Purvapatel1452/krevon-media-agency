@@ -1,8 +1,9 @@
 'use client';
 
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useRef } from 'react';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import { MapPinIcon, LightBulbIcon, TrophyIcon, ArrowRightIcon } from '@heroicons/react/24/outline';
+import { WordReveal, NumberWipe, EyebrowSlide } from './RevealText';
 
 const highlights = [
   {
@@ -22,40 +23,43 @@ const highlights = [
   },
 ];
 
-const About: React.FC = () => (
-  <section id="about" className="section-padding bg-dark-light relative overflow-hidden">
+const About: React.FC = () => {
+  const sectionRef = useRef<HTMLElement>(null);
+  const { scrollYProgress } = useScroll({ target: sectionRef, offset: ['start end', 'end start'] });
+  const ghostY = useTransform(scrollYProgress, [0, 1], ['0px', '-80px']);
+  const ghostX = useTransform(scrollYProgress, [0, 1], ['0%', '-10%']);
 
-    {/* Ghost "ABOUT" behind */}
-    <div
+  return (
+  <section ref={sectionRef} id="about" className="section-padding bg-dark-light relative overflow-hidden">
+
+    {/* Ghost "ABOUT" behind — parallax */}
+    <motion.div
+      style={{ y: ghostY, x: ghostX, fontSize: 'clamp(80px, 16vw, 220px)', WebkitTextStroke: '1px rgba(168,180,190,0.04)' }}
       className="absolute right-[-4%] top-0 font-black text-transparent select-none pointer-events-none leading-none"
-      style={{ fontSize: 'clamp(80px, 16vw, 220px)', WebkitTextStroke: '1px rgba(168,180,190,0.04)' }}
     >
       ABOUT
-    </div>
+    </motion.div>
 
     <div className="container relative z-10">
 
       {/* ── Editorial section title — left aligned ── */}
-      <motion.div
-        initial={{ opacity: 0, x: -20 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
-        className="flex items-end gap-6 mb-14"
-      >
-        <span
+      <div className="flex items-end gap-6 mb-14">
+        <NumberWipe
+          value="01"
+          delay={0}
           className="font-black text-transparent select-none leading-none flex-shrink-0"
           style={{ fontSize: 'clamp(60px, 10vw, 130px)', WebkitTextStroke: '1px rgba(168,180,190,0.13)' }}
-        >
-          01
-        </span>
+        />
         <div className="pb-2">
-          <p className="text-primary text-xs font-semibold uppercase tracking-[0.2em] mb-1">About Us</p>
+          <p className="text-primary text-xs font-semibold uppercase tracking-[0.2em] mb-1">
+            <EyebrowSlide text="About Us" delay={0.2} />
+          </p>
           <h2 className="text-3xl md:text-5xl font-black text-white leading-none">
-            The Story<br />Behind Krevon
+            <span style={{ display: 'block' }}><WordReveal text="The Story" delay={0.32} stagger={0.1} /></span>
+            <span style={{ display: 'block' }}><WordReveal text="Behind Krevon" delay={0.52} stagger={0.1} /></span>
           </h2>
         </div>
-      </motion.div>
+      </div>
 
       {/* ── Founder full-width strip ── */}
       <motion.div
@@ -90,11 +94,12 @@ const About: React.FC = () => (
         {highlights.map((h, i) => (
           <motion.div
             key={h.title}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, y: 45, scale: 0.93 }}
+            whileInView={{ opacity: 1, y: 0, scale: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: i * 0.1 }}
-            className="metal-card metal-card-hover rounded-xl p-6"
+            transition={{ type: 'spring', stiffness: 85, damping: 18, delay: i * 0.14 }}
+            whileHover={{ y: -4, scale: 1.02 }}
+            className="metal-card metal-card-hover rounded-xl p-6 cursor-default"
           >
             <div className="w-10 h-10 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center mb-4">
               {h.icon}
@@ -154,6 +159,7 @@ const About: React.FC = () => (
 
     </div>
   </section>
-);
+  );
+};
 
 export default About;

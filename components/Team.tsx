@@ -1,7 +1,8 @@
 'use client';
 
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion, useSpring, useMotionValue, useTransform } from 'framer-motion';
+import { WordReveal } from './RevealText';
 
 interface TeamMemberData {
   name: string;
@@ -64,111 +65,155 @@ const teamMembers: TeamMemberData[] = [
   },
 ];
 
-const TeamCard: React.FC<{ member: TeamMemberData; index: number }> = ({ member, index }) => (
-  <motion.div
-    initial={{ opacity: 0, y: 24 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: true }}
-    transition={{ duration: 0.5, delay: index * 0.1 }}
-    className="group relative bg-dark-lighter rounded-2xl border border-primary/15 hover:border-primary/45 hover:-translate-y-1 transition-all duration-300 overflow-hidden flex flex-col"
-  >
-    <div className="h-1 w-full bg-gradient-to-r from-primary to-secondary opacity-60 group-hover:opacity-100 transition-opacity duration-300" />
+const TeamCard: React.FC<{ member: TeamMemberData; index: number }> = ({ member, index }) => {
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
+  const rotateX = useSpring(useTransform(mouseY, [-0.5, 0.5], [12, -12]), { stiffness: 160, damping: 22 });
+  const rotateY = useSpring(useTransform(mouseX, [-0.5, 0.5], [-12, 12]), { stiffness: 160, damping: 22 });
+  const glowX   = useTransform(mouseX, [-0.5, 0.5], ['0%', '100%']);
+  const glowY   = useTransform(mouseY, [-0.5, 0.5], ['0%', '100%']);
 
-    <div className="p-7 flex flex-col items-center text-center flex-1">
-      <div className="relative mb-5">
-        <div
-          className={`w-20 h-20 rounded-full bg-gradient-to-br ${member.gradient} flex items-center justify-center text-white text-xl font-bold shadow-lg`}
-        >
-          {member.initials}
-        </div>
-        <span className="absolute bottom-1 right-1 w-3.5 h-3.5 bg-green-500 border-2 border-dark-lighter rounded-full" />
-      </div>
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    mouseX.set((e.clientX - rect.left) / rect.width - 0.5);
+    mouseY.set((e.clientY - rect.top) / rect.height - 0.5);
+  };
 
-      <h3 className="text-lg font-bold text-white mb-1 group-hover:text-primary transition-colors duration-300">
-        {member.name}
-      </h3>
-      <p className="text-primary text-xs font-semibold uppercase tracking-wider mb-3">
-        {member.role}
-      </p>
-      <p className="text-white/50 text-sm leading-relaxed flex-1">
-        {member.bio}
-      </p>
+  const handleMouseLeave = () => {
+    mouseX.set(0);
+    mouseY.set(0);
+  };
 
-      <div className="w-full h-px bg-white/8 my-5" />
-
-      <div className="flex items-center gap-3">
-        <a
-          href={member.instagram}
-          aria-label={`${member.name} Instagram`}
-          className="flex items-center gap-1.5 px-3 py-1.5 bg-white/5 border border-white/10 rounded-lg text-white/50 hover:text-pink-400 hover:border-pink-400/30 hover:bg-pink-400/5 transition-all duration-200 text-xs font-medium"
-        >
-          <InstagramIcon />
-          Instagram
-        </a>
-        <a
-          href={member.linkedin}
-          aria-label={`${member.name} LinkedIn`}
-          className="flex items-center gap-1.5 px-3 py-1.5 bg-white/5 border border-white/10 rounded-lg text-white/50 hover:text-blue-400 hover:border-blue-400/30 hover:bg-blue-400/5 transition-all duration-200 text-xs font-medium"
-        >
-          <LinkedInIcon />
-          LinkedIn
-        </a>
-      </div>
-    </div>
-  </motion.div>
-);
-
-const Team: React.FC = () => {
   return (
-    <section id="team" className="section-padding bg-dark">
-      <div className="container">
+    <motion.div
+      initial={{ opacity: 0, y: 32, scale: 0.94 }}
+      whileInView={{ opacity: 1, y: 0, scale: 1 }}
+      viewport={{ once: true }}
+      transition={{ type: 'spring', stiffness: 80, damping: 18, delay: index * 0.12 }}
+      style={{ perspective: 900 }}
+      className="h-full"
+    >
+      <motion.div
+        style={{ rotateX, rotateY, transformStyle: 'preserve-3d' }}
+        onMouseMove={handleMouseMove}
+        onMouseLeave={handleMouseLeave}
+        className="group relative bg-dark-lighter rounded-2xl border border-primary/15 hover:border-primary/50 transition-colors duration-300 overflow-hidden flex flex-col h-full cursor-default"
+      >
+        {/* Dynamic reflection highlight */}
         <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
-          <div className="text-center mb-14">
-            <motion.span
-              initial={{ opacity: 0, y: -8 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4 }}
-              className="inline-block px-4 py-1 bg-primary/10 border border-primary/25 rounded-full text-primary text-sm font-medium mb-4"
+          className="absolute inset-0 rounded-2xl pointer-events-none z-10"
+          style={{
+            background: `radial-gradient(circle at ${glowX} ${glowY}, rgba(200,212,222,0.07) 0%, transparent 65%)`,
+          }}
+        />
+
+        <div className="h-0.5 w-full bg-gradient-to-r from-primary to-secondary opacity-55 group-hover:opacity-100 transition-opacity duration-300" />
+
+        <div className="p-7 flex flex-col items-center text-center flex-1 relative z-20">
+          <div className="relative mb-5">
+            <motion.div
+              className={`w-20 h-20 rounded-full bg-gradient-to-br ${member.gradient} flex items-center justify-center text-white text-xl font-bold shadow-lg`}
+              whileHover={{ scale: 1.08 }}
+              transition={{ type: 'spring', stiffness: 300, damping: 20 }}
             >
-              Our Team
-            </motion.span>
-            <h2 className="heading-lg text-white mb-4">Meet the Team</h2>
-            <p className="text-white/60 text-lg max-w-2xl mx-auto">
-              The creative minds and strategic thinkers behind every brand we build, every campaign we run, and every result we deliver.
-            </p>
+              {member.initials}
+            </motion.div>
+            {/* Online indicator */}
+            <span className="absolute bottom-1 right-1 w-3.5 h-3.5 bg-green-500 border-2 border-dark-lighter rounded-full" />
+            {/* Avatar ring pulse */}
+            <motion.div
+              className="absolute inset-0 rounded-full"
+              style={{ border: '1px solid rgba(168,180,190,0.3)' }}
+              animate={{ scale: [1, 1.2, 1], opacity: [0.5, 0, 0.5] }}
+              transition={{ duration: 3, repeat: Infinity, ease: 'easeOut', delay: index * 0.4 }}
+            />
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {teamMembers.map((member, index) => (
-              <TeamCard key={member.name} member={member} index={index} />
-            ))}
+          <h3 className="text-lg font-bold text-white mb-1 group-hover:text-primary transition-colors duration-300">
+            {member.name}
+          </h3>
+          <p className="text-primary text-xs font-semibold uppercase tracking-wider mb-3">
+            {member.role}
+          </p>
+          <p className="text-white/50 text-sm leading-relaxed flex-1">
+            {member.bio}
+          </p>
+
+          <div className="w-full h-px bg-white/8 my-5" />
+
+          <div className="flex items-center gap-3">
+            <a
+              href={member.instagram}
+              aria-label={`${member.name} Instagram`}
+              className="flex items-center gap-1.5 px-3 py-1.5 bg-white/5 border border-white/10 rounded-lg text-white/50 hover:text-pink-400 hover:border-pink-400/30 hover:bg-pink-400/5 transition-all duration-200 text-xs font-medium"
+            >
+              <InstagramIcon />
+              Instagram
+            </a>
+            <a
+              href={member.linkedin}
+              aria-label={`${member.name} LinkedIn`}
+              className="flex items-center gap-1.5 px-3 py-1.5 bg-white/5 border border-white/10 rounded-lg text-white/50 hover:text-blue-400 hover:border-blue-400/30 hover:bg-blue-400/5 transition-all duration-200 text-xs font-medium"
+            >
+              <LinkedInIcon />
+              LinkedIn
+            </a>
           </div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.5 }}
-            className="mt-12 text-center"
-          >
-            <p className="text-white/35 text-sm">
-              Passionate about digital media?{' '}
-              <a href="#contact" className="text-primary hover:text-primary/80 underline underline-offset-2 transition-colors">
-                Join our team.
-              </a>
-            </p>
-          </motion.div>
-
-        </motion.div>
-      </div>
-    </section>
+        </div>
+      </motion.div>
+    </motion.div>
   );
 };
+
+const Team: React.FC = () => (
+  <section id="team" className="section-padding bg-dark">
+    <div className="container">
+      <div className="text-center mb-14">
+        <motion.span
+          initial={{ opacity: 0, y: -10, scale: 0.9 }}
+          whileInView={{ opacity: 1, y: 0, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ type: 'spring', stiffness: 100, damping: 18 }}
+          className="inline-block px-4 py-1 bg-primary/10 border border-primary/25 rounded-full text-primary text-sm font-medium mb-4"
+        >
+          Our Team
+        </motion.span>
+        <h2 className="heading-lg text-white mb-4">
+          <WordReveal text="Meet the Team" delay={0.2} stagger={0.1} />
+        </h2>
+        <motion.p
+          initial={{ opacity: 0, y: 18 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="text-white/60 text-lg max-w-2xl mx-auto"
+        >
+          The creative minds and strategic thinkers behind every brand we build, every campaign we run, and every result we deliver.
+        </motion.p>
+      </div>
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {teamMembers.map((member, index) => (
+          <TeamCard key={member.name} member={member} index={index} />
+        ))}
+      </div>
+
+      <motion.div
+        initial={{ opacity: 0, y: 16 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5, delay: 0.5 }}
+        className="mt-12 text-center"
+      >
+        <p className="text-white/35 text-sm">
+          Passionate about digital media?{' '}
+          <a href="#contact" className="text-primary hover:text-primary/80 underline underline-offset-2 transition-colors">
+            Join our team.
+          </a>
+        </p>
+      </motion.div>
+    </div>
+  </section>
+);
 
 export default Team;

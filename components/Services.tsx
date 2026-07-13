@@ -1,7 +1,8 @@
 'use client';
 
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useRef } from 'react';
+import { motion, useScroll, useTransform } from 'framer-motion';
+import { WordReveal, NumberWipe, EyebrowSlide } from './RevealText';
 import {
   BuildingOffice2Icon, ChartBarIcon, MegaphoneIcon, FilmIcon,
   UserGroupIcon, RocketLaunchIcon, VideoCameraIcon,
@@ -31,52 +32,58 @@ const managementFeatures = [
   'Quarterly strategy review',
 ];
 
-const Services: React.FC = () => (
-  <section id="services" className="section-padding bg-dark relative overflow-hidden">
+const Services: React.FC = () => {
+  const sectionRef = useRef<HTMLElement>(null);
+  const { scrollYProgress } = useScroll({ target: sectionRef, offset: ['start end', 'end start'] });
+  const ghostY = useTransform(scrollYProgress, [0, 1], ['0px', '-90px']);
+  const ghostX = useTransform(scrollYProgress, [0, 1], ['0%', '10%']);
 
-    {/* Ghost "SERVICES" */}
-    <div
+  return (
+  <section ref={sectionRef} id="services" className="section-padding bg-dark relative overflow-hidden">
+
+    {/* Ghost "SERVICES" — parallax */}
+    <motion.div
+      style={{ y: ghostY, x: ghostX, fontSize: 'clamp(60px, 13vw, 180px)', WebkitTextStroke: '1px rgba(168,180,190,0.035)' }}
       className="absolute left-[-2%] top-0 font-black text-transparent select-none pointer-events-none leading-none"
-      style={{ fontSize: 'clamp(60px, 13vw, 180px)', WebkitTextStroke: '1px rgba(168,180,190,0.035)' }}
     >
       SERVICES
-    </div>
+    </motion.div>
 
     <div className="container relative z-10">
 
       {/* ── Section title ── */}
-      <motion.div
-        initial={{ opacity: 0, x: -20 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
-        className="flex items-end gap-6 mb-14"
-      >
-        <span
+      <div className="flex items-end gap-6 mb-14">
+        <NumberWipe
+          value="02"
+          delay={0}
           className="font-black text-transparent select-none leading-none flex-shrink-0"
           style={{ fontSize: 'clamp(60px, 10vw, 130px)', WebkitTextStroke: '1px rgba(168,180,190,0.13)' }}
-        >
-          02
-        </span>
+        />
         <div className="pb-2">
-          <p className="text-primary text-xs font-semibold uppercase tracking-[0.2em] mb-1">What We Offer</p>
+          <p className="text-primary text-xs font-semibold uppercase tracking-[0.2em] mb-1">
+            <EyebrowSlide text="What We Offer" delay={0.2} />
+          </p>
           <h2 className="text-3xl md:text-5xl font-black text-white leading-none">
-            Our Services
+            <WordReveal text="Our Services" delay={0.35} stagger={0.12} />
           </h2>
         </div>
-      </motion.div>
+      </div>
 
       {/* ── Numbered service rows ── */}
       <div className="space-y-0">
         {services.map((s, i) => (
           <motion.div
             key={s.n}
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.45, delay: i * 0.04 }}
+            initial={{ opacity: 0, x: i % 2 === 0 ? -28 : 28, y: 20 }}
+            whileInView={{ opacity: 1, x: 0, y: 0 }}
+            viewport={{ once: true, margin: '-40px' }}
+            transition={{ type: 'spring', stiffness: 80, damping: 18, delay: i * 0.045 }}
           >
-            <div className="group flex items-start gap-6 py-6 px-5 rounded-xl hover:metal-card transition-all duration-300 cursor-default">
+            <motion.div
+              whileHover={{ x: 6 }}
+              transition={{ type: 'spring', stiffness: 300, damping: 20 }}
+              className="group flex items-start gap-6 py-6 px-5 rounded-xl hover:metal-card transition-all duration-300 cursor-default"
+            >
               {/* Number */}
               <span
                 className="gradient-text font-black leading-none flex-shrink-0 mt-0.5"
@@ -97,7 +104,7 @@ const Services: React.FC = () => (
               <div className="w-10 h-10 rounded-xl bg-primary/8 border border-primary/15 flex items-center justify-center flex-shrink-0 group-hover:bg-primary/18 group-hover:border-primary/35 transition-all duration-300">
                 {s.icon}
               </div>
-            </div>
+            </motion.div>
             {i < services.length - 1 && <div className="metal-rule" />}
           </motion.div>
         ))}
@@ -138,6 +145,7 @@ const Services: React.FC = () => (
 
     </div>
   </section>
-);
+  );
+};
 
 export default Services;

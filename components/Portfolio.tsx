@@ -1,7 +1,9 @@
 'use client';
 
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useRef } from 'react';
+import { motion, useScroll, useTransform } from 'framer-motion';
+import AnimatedCounter from './AnimatedCounter';
+import { WordReveal, NumberWipe, EyebrowSlide } from './RevealText';
 
 const cases = [
   {
@@ -42,38 +44,42 @@ const cases = [
   },
 ];
 
-const Portfolio: React.FC = () => (
-  <section id="portfolio" className="section-padding bg-dark-light relative overflow-hidden">
+const Portfolio: React.FC = () => {
+  const sectionRef = useRef<HTMLElement>(null);
+  const { scrollYProgress } = useScroll({ target: sectionRef, offset: ['start end', 'end start'] });
+  const ghostY = useTransform(scrollYProgress, [0, 1], ['0px', '-70px']);
+  const ghostX = useTransform(scrollYProgress, [0, 1], ['0%', '8%']);
 
-    <div
+  return (
+  <section ref={sectionRef} id="portfolio" className="section-padding bg-dark-light relative overflow-hidden">
+
+    {/* Ghost "WORK" — parallax */}
+    <motion.div
+      style={{ y: ghostY, x: ghostX, fontSize: 'clamp(60px, 13vw, 180px)', WebkitTextStroke: '1px rgba(168,180,190,0.035)' }}
       className="absolute right-[-2%] top-0 font-black text-transparent select-none pointer-events-none leading-none"
-      style={{ fontSize: 'clamp(60px, 13vw, 180px)', WebkitTextStroke: '1px rgba(168,180,190,0.035)' }}
     >
       WORK
-    </div>
+    </motion.div>
 
     <div className="container relative z-10">
 
-      <motion.div
-        initial={{ opacity: 0, x: -20 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
-        className="flex items-end gap-6 mb-14"
-      >
-        <span
+      <div className="flex items-end gap-6 mb-14">
+        <NumberWipe
+          value="04"
+          delay={0}
           className="font-black text-transparent select-none leading-none flex-shrink-0"
           style={{ fontSize: 'clamp(60px, 10vw, 130px)', WebkitTextStroke: '1px rgba(168,180,190,0.13)' }}
-        >
-          04
-        </span>
+        />
         <div className="pb-2">
-          <p className="text-primary text-xs font-semibold uppercase tracking-[0.2em] mb-1">Our Work</p>
+          <p className="text-primary text-xs font-semibold uppercase tracking-[0.2em] mb-1">
+            <EyebrowSlide text="Our Work" delay={0.2} />
+          </p>
           <h2 className="text-3xl md:text-5xl font-black text-white leading-none">
-            Portfolio &amp;<br />Results
+            <span style={{ display: 'block' }}><WordReveal text="Portfolio &" delay={0.32} stagger={0.1} /></span>
+            <span style={{ display: 'block' }}><WordReveal text="Results" delay={0.52} stagger={0.1} /></span>
           </h2>
         </div>
-      </motion.div>
+      </div>
 
       {/* Achievement bar */}
       <motion.div
@@ -90,7 +96,9 @@ const Portfolio: React.FC = () => (
           { v: '2+', l: 'Years of Excellence' },
         ].map(a => (
           <div key={a.l} className="text-center">
-            <div className="gradient-text font-black text-3xl md:text-4xl leading-none mb-1">{a.v}</div>
+            <div className="gradient-text font-black text-3xl md:text-4xl leading-none mb-1">
+              <AnimatedCounter value={a.v} />
+            </div>
             <div className="text-white/45 text-xs font-medium">{a.l}</div>
           </div>
         ))}
@@ -101,10 +109,10 @@ const Portfolio: React.FC = () => (
         {cases.map((c, i) => (
           <motion.div
             key={c.n}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: i * 0.08 }}
+            initial={{ opacity: 0, x: i % 2 === 0 ? -36 : 36, y: 16 }}
+            whileInView={{ opacity: 1, x: 0, y: 0 }}
+            viewport={{ once: true, margin: '-40px' }}
+            transition={{ type: 'spring', stiffness: 75, damping: 18, delay: i * 0.08 }}
           >
             <div className="group py-8 px-5 rounded-xl hover:metal-card transition-all duration-300 cursor-default">
               <div className="grid grid-cols-12 gap-4 md:gap-8 items-start">
@@ -132,7 +140,7 @@ const Portfolio: React.FC = () => (
                     className="gradient-text font-black leading-none"
                     style={{ fontSize: 'clamp(36px, 5vw, 56px)' }}
                   >
-                    {c.keyMetric.value}
+                    <AnimatedCounter value={c.keyMetric.value} />
                   </div>
                   <p className="text-white/35 text-xs mt-1">{c.keyMetric.label}</p>
                 </div>
@@ -164,6 +172,7 @@ const Portfolio: React.FC = () => (
 
     </div>
   </section>
-);
+  );
+};
 
 export default Portfolio;

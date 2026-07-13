@@ -2,6 +2,7 @@
 
 import React, { useState, useRef } from 'react';
 import { motion } from 'framer-motion';
+import { WordReveal } from './RevealText';
 import {
   EnvelopeIcon,
   MapPinIcon,
@@ -170,7 +171,9 @@ const Contact: React.FC = () => {
             >
               Get In Touch
             </motion.span>
-            <h2 className="heading-lg text-white mb-4">Let&apos;s Build Something Great</h2>
+            <h2 className="heading-lg text-white mb-4">
+              <WordReveal text="Let's Build Something Great" delay={0.2} stagger={0.07} />
+            </h2>
             <p className="text-white/60 text-lg max-w-2xl mx-auto">
               Ready to grow your brand? Drop us a message or reach out directly — we respond fast.
             </p>

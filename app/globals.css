@@ -173,3 +173,50 @@
   0%   { transform: translateX(-50%); }
   100% { transform: translateX(0); }
 }
+
+/* ── Scroll / Interaction Animations ──────────── */
+@keyframes glow-pulse {
+  0%,100% {
+    box-shadow: 0 0 24px rgba(168,180,190,0.06),
+                inset 0 1px 0 rgba(200,212,222,0.13);
+  }
+  50% {
+    box-shadow: 0 0 55px rgba(168,180,190,0.20),
+                0 0 90px rgba(168,180,190,0.08),
+                inset 0 1px 0 rgba(200,212,222,0.28);
+  }
+}
+
+@keyframes border-shimmer {
+  0%,100% { border-color: rgba(168,180,190,0.38); }
+  50% {
+    border-color: rgba(208,220,228,0.78);
+    box-shadow: 0 0 28px rgba(168,180,190,0.22),
+                0 0 60px rgba(168,180,190,0.10);
+  }
+}
+
+@keyframes reveal-left {
+  0%   { clip-path: inset(0 100% 0 0); }
+  100% { clip-path: inset(0 0% 0 0); }
+}
+
+@keyframes float-orb {
+  0%,100% { transform: translate(0px, 0px) scale(1); }
+  33%     { transform: translate(20px,-30px) scale(1.08); }
+  66%     { transform: translate(-15px,-18px) scale(0.94); }
+}
+
+@keyframes scan-line {
+  0%   { transform: scaleX(0); opacity: 0; }
+  8%   { opacity: 1; }
+  92%  { opacity: 1; }
+  100% { transform: scaleX(1); opacity: 0; }
+}
+
+.animate-glow-pulse  { animation: glow-pulse 3s ease-in-out infinite; }
+.animate-border-shimmer { animation: border-shimmer 2.8s ease-in-out infinite; }
+.animate-float-orb   { animation: float-orb 8s ease-in-out infinite; }
+
+/* Tilt card preserve 3-D */
+.tilt-preserve { transform-style: preserve-3d; }

@@ -37,15 +37,17 @@ export default function Taglines() {
           </div>
           <div className="flex-1 metal-rule" />
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-5xl mx-auto" style={{ perspective: '900px' }}>
           {taglines.map((t, i) => (
             <motion.div
               key={t.text}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, rotateX: -22, y: 28, scale: 0.95 }}
+              whileInView={{ opacity: 1, rotateX: 0, y: 0, scale: 1 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="metal-card metal-card-hover rounded-xl flex items-center gap-4 p-5"
+              transition={{ type: 'spring', stiffness: 90, damping: 18, delay: i * 0.12 }}
+              whileHover={{ scale: 1.03, y: -3 }}
+              className="metal-card metal-card-hover rounded-xl flex items-center gap-4 p-5 cursor-default"
+              style={{ transformStyle: 'preserve-3d' }}
             >
               <div className="w-10 h-10 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center text-primary flex-shrink-0">
                 {t.icon}

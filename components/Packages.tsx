@@ -1,7 +1,8 @@
 'use client';
 
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useRef } from 'react';
+import { motion, useScroll, useTransform } from 'framer-motion';
+import { WordReveal, NumberWipe, EyebrowSlide } from './RevealText';
 import { CheckCircleIcon, RocketLaunchIcon, SparklesIcon, TrophyIcon, ArrowRightIcon } from '@heroicons/react/24/outline';
 
 interface Plan {
@@ -65,10 +66,11 @@ const plans: Plan[] = [
 
 const PricingCard: React.FC<{ plan: Plan; index: number }> = ({ plan, index }) => (
   <motion.div
-    initial={{ opacity: 0, y: 28 }}
-    whileInView={{ opacity: 1, y: 0 }}
+    initial={{ opacity: 0, y: 44, scale: 0.93 }}
+    whileInView={{ opacity: 1, y: 0, scale: 1 }}
     viewport={{ once: true }}
-    transition={{ duration: 0.5, delay: index * 0.1 }}
+    transition={{ type: 'spring', stiffness: 75, damping: 18, delay: index * 0.12 }}
+    whileHover={{ y: -6 }}
     className={`relative flex flex-col rounded-2xl overflow-hidden transition-all duration-300 ${
       plan.featured
         ? 'metal-card-hover'
@@ -87,7 +89,27 @@ const PricingCard: React.FC<{ plan: Plan; index: number }> = ({ plan, index }) =
     } : undefined}
   >
     {plan.featured && (
-      <div className="absolute top-0 left-0 bottom-0 w-1 bg-gradient-to-b from-primary/70 via-primary to-primary/70" />
+      <>
+        {/* Pulsing ambient glow */}
+        <motion.div
+          className="absolute inset-0 rounded-2xl pointer-events-none"
+          animate={{ opacity: [0.4, 1, 0.4] }}
+          transition={{ duration: 2.8, repeat: Infinity, ease: 'easeInOut' }}
+          style={{
+            background: 'radial-gradient(ellipse at 50% -10%, rgba(168,180,190,0.14) 0%, transparent 65%)',
+          }}
+        />
+        {/* Animated left accent bar */}
+        <motion.div
+          className="absolute top-0 left-0 bottom-0 w-1 rounded-l-2xl"
+          style={{ background: 'linear-gradient(180deg, rgba(168,180,190,0.35) 0%, rgba(200,212,222,0.9) 50%, rgba(168,180,190,0.35) 100%)' }}
+          animate={{ opacity: [0.6, 1, 0.6] }}
+          transition={{ duration: 2.8, repeat: Infinity, ease: 'easeInOut' }}
+        />
+      </>
+    )}
+    {!plan.featured && (
+      <div className="absolute top-0 left-0 bottom-0 w-1 bg-gradient-to-b from-primary/70 via-primary to-primary/70 opacity-0 group-hover:opacity-60 transition-opacity duration-300 rounded-l-2xl" />
     )}
 
     {plan.featured && (
@@ -144,38 +166,42 @@ const PricingCard: React.FC<{ plan: Plan; index: number }> = ({ plan, index }) =
   </motion.div>
 );
 
-const Packages: React.FC = () => (
-  <section id="packages" className="section-padding bg-dark relative overflow-hidden">
+const Packages: React.FC = () => {
+  const sectionRef = useRef<HTMLElement>(null);
+  const { scrollYProgress } = useScroll({ target: sectionRef, offset: ['start end', 'end start'] });
+  const ghostY = useTransform(scrollYProgress, [0, 1], ['0px', '-70px']);
+  const ghostX = useTransform(scrollYProgress, [0, 1], ['0%', '8%']);
 
-    <div
+  return (
+  <section ref={sectionRef} id="packages" className="section-padding bg-dark relative overflow-hidden">
+
+    {/* Ghost "PLANS" — parallax */}
+    <motion.div
+      style={{ y: ghostY, x: ghostX, fontSize: 'clamp(60px, 13vw, 180px)', WebkitTextStroke: '1px rgba(168,180,190,0.035)' }}
       className="absolute left-[-2%] top-0 font-black text-transparent select-none pointer-events-none leading-none"
-      style={{ fontSize: 'clamp(60px, 13vw, 180px)', WebkitTextStroke: '1px rgba(168,180,190,0.035)' }}
     >
       PLANS
-    </div>
+    </motion.div>
 
     <div className="container relative z-10">
 
-      <motion.div
-        initial={{ opacity: 0, x: -20 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
-        className="flex items-end gap-6 mb-14"
-      >
-        <span
+      <div className="flex items-end gap-6 mb-14">
+        <NumberWipe
+          value="05"
+          delay={0}
           className="font-black text-transparent select-none leading-none flex-shrink-0"
           style={{ fontSize: 'clamp(60px, 10vw, 130px)', WebkitTextStroke: '1px rgba(168,180,190,0.13)' }}
-        >
-          05
-        </span>
+        />
         <div className="pb-2">
-          <p className="text-primary text-xs font-semibold uppercase tracking-[0.2em] mb-1">Pricing</p>
+          <p className="text-primary text-xs font-semibold uppercase tracking-[0.2em] mb-1">
+            <EyebrowSlide text="Pricing" delay={0.2} />
+          </p>
           <h2 className="text-3xl md:text-5xl font-black text-white leading-none">
-            Choose Your<br />Growth Plan
+            <span style={{ display: 'block' }}><WordReveal text="Choose Your" delay={0.32} stagger={0.1} /></span>
+            <span style={{ display: 'block' }}><WordReveal text="Growth Plan" delay={0.52} stagger={0.1} /></span>
           </h2>
         </div>
-      </motion.div>
+      </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
         {plans.map((plan, i) => (
@@ -200,6 +226,7 @@ const Packages: React.FC = () => (
 
     </div>
   </section>
-);
+  );
+};
 
 export default Packages;
