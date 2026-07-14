@@ -120,9 +120,10 @@ const PodcastStudio: React.FC = () => (
             >
               <div className="w-full h-full rounded-full p-0.5" style={{ background: '#131518' }}>
                 <img
-                  src="/krevon_logo.jpg"
+                  src="/krevon-logo.png"
                   alt="Krevon Media Agency"
-                  className="w-full h-full rounded-full object-cover"
+                  className="w-full h-full rounded-full object-contain p-2"
+                  style={{ filter: 'invert(1)' }}
                 />
               </div>
             </div>

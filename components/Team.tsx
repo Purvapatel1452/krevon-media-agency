@@ -29,37 +29,100 @@ const LinkedInIcon = () => (
 const teamMembers: TeamMemberData[] = [
   {
     name: 'Nikhil Patel',
-    role: 'Founder & Creative Director',
-    bio: 'The visionary behind Krevon Media Agency. Expert in brand strategy, creative direction, and building digital presences that drive real business growth.',
+    role: 'Co-Founder',
+    bio: 'The driving force behind Krevon\'s strategy and client growth. Turns brand vision into results — one campaign at a time.',
     initials: 'NP',
     gradient: 'from-primary to-slate-600',
     instagram: '#',
     linkedin: '#',
   },
   {
-    name: 'Priya Shah',
-    role: 'Social Media Strategist',
-    bio: 'Platform algorithm expert with a track record of scaling brand accounts from zero to 10K+ followers with engaging, conversion-focused content.',
-    initials: 'PS',
+    name: 'Darshan Sathwara',
+    role: 'Co-Founder',
+    bio: 'Co-builder of Krevon. Leads content strategy, copywriting, and platform planning — the mind behind every brand narrative.',
+    initials: 'DS',
+    gradient: 'from-primary to-secondary',
+    instagram: '#',
+    linkedin: '#',
+  },
+  {
+    name: 'Dev Patel',
+    role: 'Creative Director',
+    bio: 'Leads campaign direction and visual identity. Every brand story told through his creative lens becomes a visual that stops the scroll.',
+    initials: 'DV',
+    gradient: 'from-slate-400 to-slate-700',
+    instagram: '#',
+    linkedin: '#',
+  },
+  {
+    name: 'Boni Patel',
+    role: 'Cinematographer & Editor',
+    bio: 'Cinematic shoots, post-production mastery, and colour grading that makes every frame look like it belongs on the big screen.',
+    initials: 'BP',
     gradient: 'from-slate-500 to-primary',
     instagram: '#',
     linkedin: '#',
   },
   {
-    name: 'Raj Mehta',
-    role: 'Video Editor & Content Creator',
-    bio: 'Master of hooks, cinematic cuts, and reels that stop the scroll. Turns raw footage into viral, brand-building content every single day.',
-    initials: 'RM',
+    name: 'Nakshatra',
+    role: 'Video Editor',
+    bio: '4+ years of advanced editing. Crafts brand films and reels that communicate with clarity, emotion, and lasting impact.',
+    initials: 'NK',
     gradient: 'from-slate-600 to-slate-400',
     instagram: '#',
     linkedin: '#',
   },
   {
-    name: 'Aarav Patel',
-    role: 'Brand Designer',
-    bio: 'Brand identity specialist crafting logos, visual systems, and thumb-stopping creatives that make brands impossible to ignore.',
-    initials: 'AP',
+    name: 'Daxis Patel',
+    role: 'Voice Artist & Script Writer',
+    bio: 'Professional voice-over production and script writing that gives brands a clear, compelling voice audiences remember.',
+    initials: 'DX',
+    gradient: 'from-slate-700 to-primary',
+    instagram: '#',
+    linkedin: '#',
+  },
+  {
+    name: 'Dev Soni',
+    role: 'Videographer',
+    bio: 'Visual storytelling through short-form content that captures attention in seconds and builds brand identity frame by frame.',
+    initials: 'DE',
+    gradient: 'from-primary to-slate-600',
+    instagram: '#',
+    linkedin: '#',
+  },
+  {
+    name: 'Maan Prajapati',
+    role: 'Team Coordinator & Videographer',
+    bio: 'Keeps every production on time and on brief. Coordinates shoots, manages timelines, and contributes hands-on videography.',
+    initials: 'MP',
+    gradient: 'from-slate-500 to-primary',
+    instagram: '#',
+    linkedin: '#',
+  },
+  {
+    name: 'Darshan Panchal',
+    role: 'Technical Support',
+    bio: 'Manages platform infrastructure, digital tools, and the technical backbone that keeps the entire agency running at peak efficiency.',
+    initials: 'DP',
+    gradient: 'from-slate-600 to-slate-400',
+    instagram: '#',
+    linkedin: '#',
+  },
+  {
+    name: 'Purv Patel',
+    role: 'IT Manager',
+    bio: 'Oversees systems, software, and technical operations — ensuring every tool and platform the team relies on works flawlessly.',
+    initials: 'PV',
     gradient: 'from-primary to-secondary',
+    instagram: '#',
+    linkedin: '#',
+  },
+  {
+    name: 'Vivek Vyas',
+    role: 'Videographer',
+    bio: 'Brand videos, reels, and event shoots that capture the energy of every moment. Every brand he shoots tells a story worth watching.',
+    initials: 'VV',
+    gradient: 'from-slate-700 to-primary',
     instagram: '#',
     linkedin: '#',
   },
@@ -89,7 +152,7 @@ const TeamCard: React.FC<{ member: TeamMemberData; index: number }> = ({ member,
       initial={{ opacity: 0, y: 32, scale: 0.94 }}
       whileInView={{ opacity: 1, y: 0, scale: 1 }}
       viewport={{ once: true }}
-      transition={{ type: 'spring', stiffness: 80, damping: 18, delay: index * 0.12 }}
+      transition={{ type: 'spring', stiffness: 80, damping: 18, delay: (index % 4) * 0.1 }}
       style={{ perspective: 900 }}
       className="h-full"
     >
@@ -118,14 +181,12 @@ const TeamCard: React.FC<{ member: TeamMemberData; index: number }> = ({ member,
             >
               {member.initials}
             </motion.div>
-            {/* Online indicator */}
             <span className="absolute bottom-1 right-1 w-3.5 h-3.5 bg-green-500 border-2 border-dark-lighter rounded-full" />
-            {/* Avatar ring pulse */}
             <motion.div
               className="absolute inset-0 rounded-full"
               style={{ border: '1px solid rgba(168,180,190,0.3)' }}
               animate={{ scale: [1, 1.2, 1], opacity: [0.5, 0, 0.5] }}
-              transition={{ duration: 3, repeat: Infinity, ease: 'easeOut', delay: index * 0.4 }}
+              transition={{ duration: 3, repeat: Infinity, ease: 'easeOut', delay: index * 0.3 }}
             />
           </div>
 
@@ -188,11 +249,11 @@ const Team: React.FC = () => (
           transition={{ duration: 0.6, delay: 0.2 }}
           className="text-white/60 text-lg max-w-2xl mx-auto"
         >
-          The creative minds and strategic thinkers behind every brand we build, every campaign we run, and every result we deliver.
+          11 creative minds and strategic thinkers behind every brand we build, every campaign we run, and every result we deliver.
         </motion.p>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
         {teamMembers.map((member, index) => (
           <TeamCard key={member.name} member={member} index={index} />
         ))}

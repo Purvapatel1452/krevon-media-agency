@@ -25,18 +25,18 @@ export const metadata: Metadata = {
     title: 'Krevon Media Agency | Premium Brand Building in Mahesana',
     description:
       'Krevon Media Agency — Premium brand building, digital marketing, Meta Ads, video production & podcast studio in Mehsana, Gujarat.',
-    images: [{ url: '/krevon_logo.jpg', width: 1200, height: 630, alt: 'Krevon Media Agency' }],
+    images: [{ url: '/krevon-logo.png', width: 1200, height: 630, alt: 'Krevon Media Agency' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Krevon Media Agency | Brand Building & Digital Marketing',
     description: 'Premium brand building and digital marketing agency in Mehsana, Gujarat.',
-    images: ['/krevon_logo.jpg'],
+    images: ['/krevon-logo.png'],
   },
   icons: {
-    icon: '/krevon_logo.jpg',
-    shortcut: '/krevon_logo.jpg',
-    apple: '/krevon_logo.jpg',
+    icon: '/krevon-logo.png',
+    shortcut: '/krevon-logo.png',
+    apple: '/krevon-logo.png',
   },
   robots: { index: true, follow: true },
   alternates: { canonical: 'https://krevon.in' },

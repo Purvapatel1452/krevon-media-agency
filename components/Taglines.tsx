@@ -28,9 +28,10 @@ export default function Taglines() {
             >
               <div className="w-full h-full rounded-full p-0.5" style={{ background: '#0C0D0F' }}>
                 <img
-                  src="/krevon_logo.jpg"
+                  src="/krevon-logo.png"
                   alt="Krevon Media Agency"
-                  className="w-full h-full rounded-full object-cover"
+                  className="w-full h-full rounded-full object-contain p-2"
+                  style={{ filter: 'invert(1)' }}
                 />
               </div>
             </div>

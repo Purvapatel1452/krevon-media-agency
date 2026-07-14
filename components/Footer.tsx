@@ -73,7 +73,7 @@ const Footer: React.FC = () => {
             <div className="sm:col-span-2 lg:col-span-1">
               <div className="flex items-center gap-3 mb-4">
                 <div className="w-10 h-10 rounded-xl overflow-hidden border border-primary/30 flex-shrink-0">
-                  <img src="/krevon_logo.jpg" alt="Krevon Media Agency" className="w-full h-full object-cover" />
+                  <img src="/krevon-logo.png" alt="Krevon Media Agency" className="w-full h-full object-contain p-1" style={{ filter: 'invert(1)' }} />
                 </div>
                 <div>
                   <p className="text-white font-bold text-base leading-none">Krevon Media Agency</p>

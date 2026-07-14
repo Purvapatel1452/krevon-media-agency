@@ -51,9 +51,10 @@ const Navbar: React.FC = () => {
               transition={{ type: 'spring', stiffness: 400, damping: 17 }}
             >
               <img
-                src="/krevon_logo.jpg"
+                src="/krevon-logo.png"
                 alt="Krevon Media Agency Logo"
-                className="w-full h-full object-cover rounded-full"
+                className="w-full h-full object-contain rounded-full p-2"
+                style={{ filter: 'invert(1)' }}
               />
             </motion.div>
             <div className="flex flex-col">

@@ -61,33 +61,49 @@ const About: React.FC = () => {
         </div>
       </div>
 
-      {/* ── Founder full-width strip ── */}
-      <motion.div
-        initial={{ opacity: 0, y: 24 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
-        className="metal-card rounded-2xl p-6 md:p-8 flex flex-col md:flex-row items-start md:items-center gap-6 mb-8"
-      >
-        <div
-          className="w-20 h-20 rounded-full overflow-hidden border-2 border-primary/30 flex-shrink-0"
-          style={{ boxShadow: 'inset 0 1px 0 rgba(200,212,222,0.2), 0 4px 16px rgba(0,0,0,0.5)' }}
-        >
-          <img src="/krevon_logo.jpg" alt="Nikhil Patel" className="w-full h-full object-cover" />
-        </div>
-
-        <div className="flex-shrink-0">
-          <h3 className="text-xl font-bold text-white">Nikhil Patel</h3>
-          <p className="text-primary text-sm font-medium">Founder &amp; Creative Director</p>
-          <p className="text-white/30 text-xs mt-0.5">Krevon Media Agency</p>
-        </div>
-
-        <div className="hidden md:block w-px self-stretch bg-white/8 flex-shrink-0" />
-
-        <blockquote className="flex-1 text-white/55 italic text-sm md:text-base leading-relaxed border-l-2 border-primary/40 pl-5">
-          &ldquo;I founded Krevon Media Agency to bring world-class brand building to every ambitious business. From identity to campaigns — we handle it all so your brand can grow.&rdquo;
-        </blockquote>
-      </motion.div>
+      {/* ── Founders strip ── */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-8">
+        {[
+          {
+            name: 'Nikhil Patel',
+            role: 'Co-Founder',
+            quote: 'We built Krevon to give every ambitious local brand the same quality of strategy and content that big companies get. Growth is not a privilege — it\'s a process.',
+            delay: 0,
+          },
+          {
+            name: 'Darshan Sathwara',
+            role: 'Co-Founder',
+            quote: 'Content without strategy is just noise. Everything we create at Krevon is built around a plan — the right message, the right platform, the right time.',
+            delay: 0.12,
+          },
+        ].map((founder) => (
+          <motion.div
+            key={founder.name}
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: founder.delay }}
+            className="metal-card rounded-2xl p-6 flex flex-col gap-5"
+          >
+            <div className="flex items-center gap-4">
+              <div
+                className="w-16 h-16 rounded-full overflow-hidden border-2 border-primary/30 flex-shrink-0"
+                style={{ boxShadow: 'inset 0 1px 0 rgba(200,212,222,0.2), 0 4px 16px rgba(0,0,0,0.5)' }}
+              >
+                <img src="/krevon-logo.png" alt={founder.name} className="w-full h-full object-contain p-1.5" style={{ filter: 'invert(1)' }} />
+              </div>
+              <div>
+                <h3 className="text-lg font-bold text-white">{founder.name}</h3>
+                <p className="text-primary text-xs font-semibold uppercase tracking-wider">{founder.role}</p>
+                <p className="text-white/30 text-xs mt-0.5">Krevon Media Agency</p>
+              </div>
+            </div>
+            <blockquote className="text-white/55 italic text-sm leading-relaxed border-l-2 border-primary/40 pl-4">
+              &ldquo;{founder.quote}&rdquo;
+            </blockquote>
+          </motion.div>
+        ))}
+      </div>
 
       {/* ── 3 highlights horizontal ── */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-10">

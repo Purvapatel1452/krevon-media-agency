@@ -11,10 +11,10 @@ import AnimatedCounter from './AnimatedCounter';
 import { CharReveal, WordReveal } from './RevealText';
 
 const heroStats = [
-  { value: '20+',  label: 'Brands Served',    icon: <BuildingOffice2Icon className="w-5 h-5" /> },
-  { value: '50+',  label: 'Campaigns Run',    icon: <RocketLaunchIcon    className="w-5 h-5" /> },
-  { value: '200+', label: 'Reels Created',    icon: <MegaphoneIcon       className="w-5 h-5" /> },
-  { value: '2+',   label: 'Years Experience', icon: <TrophyIcon          className="w-5 h-5" /> },
+  { value: '100+', label: 'Brands Served',    icon: <BuildingOffice2Icon className="w-5 h-5" /> },
+  { value: '31K+', label: 'Instagram Reach',  icon: <MegaphoneIcon       className="w-5 h-5" /> },
+  { value: '500+', label: 'Reels Created',    icon: <RocketLaunchIcon    className="w-5 h-5" /> },
+  { value: '3+',   label: 'Years Experience', icon: <TrophyIcon          className="w-5 h-5" /> },
 ];
 
 const platforms = [
@@ -205,9 +205,10 @@ export default function Hero() {
                     style={{ background: '#0C0D0F' }}
                   >
                     <img
-                      src="/krevon_logo.jpg"
+                      src="/krevon-logo.png"
                       alt="Krevon Media Agency"
-                      className="w-full h-full rounded-full object-cover"
+                      className="w-full h-full rounded-full object-contain p-2"
+                      style={{ filter: 'invert(1)' }}
                     />
                   </div>
                 </div>
