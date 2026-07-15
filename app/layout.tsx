@@ -2,9 +2,10 @@ import type { Metadata } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://krevon.in'),
   title: 'Krevon Media Agency | Premium Brand Building & Digital Marketing in Mahesana',
   description:
-    'Krevon Media Agency in Mehsana, Gujarat — Premium brand building, social media marketing, Meta Ads, Google Ads, video production & podcast studio. Trusted by 20+ brands.',
+    'Krevon Media Agency in Mehsana, Gujarat — Premium brand building, social media marketing, Meta Ads, Google Ads, video production & podcast studio. Trusted by 100+ brands.',
   keywords: [
     'brand building Mahesana',
     'digital marketing Gujarat',
