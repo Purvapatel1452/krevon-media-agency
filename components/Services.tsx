@@ -43,7 +43,7 @@ const Services: React.FC = () => {
 
     {/* Ghost "SERVICES" — parallax */}
     <motion.div
-      style={{ y: ghostY, x: ghostX, fontSize: 'clamp(60px, 13vw, 180px)', WebkitTextStroke: '1px rgba(168,180,190,0.035)' }}
+      style={{ y: ghostY, x: ghostX, fontSize: 'clamp(60px, 13vw, 180px)', WebkitTextStroke: '1px rgba(255,106,0,0.035)' }}
       className="absolute left-[-2%] top-0 font-black text-transparent select-none pointer-events-none leading-none"
     >
       SERVICES
@@ -57,7 +57,7 @@ const Services: React.FC = () => {
           value="02"
           delay={0}
           className="font-black text-transparent select-none leading-none flex-shrink-0"
-          style={{ fontSize: 'clamp(60px, 10vw, 130px)', WebkitTextStroke: '1px rgba(168,180,190,0.13)' }}
+          style={{ fontSize: 'clamp(60px, 10vw, 130px)', WebkitTextStroke: '1px rgba(255,106,0,0.13)' }}
         />
         <div className="pb-2">
           <p className="text-primary text-xs font-semibold uppercase tracking-[0.2em] mb-1">

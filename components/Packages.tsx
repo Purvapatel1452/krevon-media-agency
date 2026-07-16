@@ -78,13 +78,13 @@ const PricingCard: React.FC<{ plan: Plan; index: number }> = ({ plan, index }) =
     }`}
     style={plan.featured ? {
       background: 'linear-gradient(145deg, #222830 0%, #181C24 55%, #1E2230 100%)',
-      border: '1px solid rgba(168,180,190,0.38)',
+      border: '1px solid rgba(255,106,0,0.38)',
       boxShadow: `
-        inset 0 1px 0 rgba(200,212,222,0.2),
+        inset 0 1px 0 rgba(255,140,56,0.2),
         inset 0 -1px 0 rgba(0,0,0,0.45),
         0 8px 24px rgba(0,0,0,0.55),
         0 24px 64px rgba(0,0,0,0.4),
-        0 0 60px rgba(168,180,190,0.06)
+        0 0 60px rgba(255,106,0,0.06)
       `,
     } : undefined}
   >
@@ -96,13 +96,13 @@ const PricingCard: React.FC<{ plan: Plan; index: number }> = ({ plan, index }) =
           animate={{ opacity: [0.4, 1, 0.4] }}
           transition={{ duration: 2.8, repeat: Infinity, ease: 'easeInOut' }}
           style={{
-            background: 'radial-gradient(ellipse at 50% -10%, rgba(168,180,190,0.14) 0%, transparent 65%)',
+            background: 'radial-gradient(ellipse at 50% -10%, rgba(255,106,0,0.14) 0%, transparent 65%)',
           }}
         />
         {/* Animated left accent bar */}
         <motion.div
           className="absolute top-0 left-0 bottom-0 w-1 rounded-l-2xl"
-          style={{ background: 'linear-gradient(180deg, rgba(168,180,190,0.35) 0%, rgba(200,212,222,0.9) 50%, rgba(168,180,190,0.35) 100%)' }}
+          style={{ background: 'linear-gradient(180deg, rgba(255,106,0,0.35) 0%, rgba(255,140,56,0.9) 50%, rgba(255,106,0,0.35) 100%)' }}
           animate={{ opacity: [0.6, 1, 0.6] }}
           transition={{ duration: 2.8, repeat: Infinity, ease: 'easeInOut' }}
         />
@@ -177,7 +177,7 @@ const Packages: React.FC = () => {
 
     {/* Ghost "PLANS" — parallax */}
     <motion.div
-      style={{ y: ghostY, x: ghostX, fontSize: 'clamp(60px, 13vw, 180px)', WebkitTextStroke: '1px rgba(168,180,190,0.035)' }}
+      style={{ y: ghostY, x: ghostX, fontSize: 'clamp(60px, 13vw, 180px)', WebkitTextStroke: '1px rgba(255,106,0,0.035)' }}
       className="absolute left-[-2%] top-0 font-black text-transparent select-none pointer-events-none leading-none"
     >
       PLANS
@@ -190,7 +190,7 @@ const Packages: React.FC = () => {
           value="05"
           delay={0}
           className="font-black text-transparent select-none leading-none flex-shrink-0"
-          style={{ fontSize: 'clamp(60px, 10vw, 130px)', WebkitTextStroke: '1px rgba(168,180,190,0.13)' }}
+          style={{ fontSize: 'clamp(60px, 10vw, 130px)', WebkitTextStroke: '1px rgba(255,106,0,0.13)' }}
         />
         <div className="pb-2">
           <p className="text-primary text-xs font-semibold uppercase tracking-[0.2em] mb-1">

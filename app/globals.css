@@ -29,7 +29,7 @@
     width: 200%;
     height: 200%;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
-    opacity: 0.022;
+    opacity: 0.018;
     pointer-events: none;
     z-index: 9999;
     animation: grain 0.5s steps(1) infinite;
@@ -45,9 +45,9 @@
 
   @media (pointer: fine) {
     ::-webkit-scrollbar       { width: 5px; }
-    ::-webkit-scrollbar-track { background: #131518; }
-    ::-webkit-scrollbar-thumb { background: #A8B4BE; border-radius: 3px; }
-    ::-webkit-scrollbar-thumb:hover { background: #C8D2DA; }
+    ::-webkit-scrollbar-track { background: #111111; }
+    ::-webkit-scrollbar-thumb { background: #FF6A00; border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: #FF8C38; }
   }
 }
 
@@ -65,67 +65,67 @@
     min-height: 44px;
   }
 
-  /* Chrome shimmer gradient text */
+  /* White/silver shimmer — used on big display numbers & headings */
   .gradient-text {
     @apply bg-clip-text text-transparent;
-    background-image: linear-gradient(110deg, #6A7880 0%, #A8B4BE 28%, #D0DCE4 50%, #A8B4BE 72%, #6A7880 100%);
+    background-image: linear-gradient(110deg, #C0C0C0 0%, #FFFFFF 28%, #F0F0F0 50%, #FFFFFF 72%, #C0C0C0 100%);
     background-size: 600px 100%;
     animation: shimmer 3s linear infinite;
   }
 
-  /* 3-D metallic card */
+  /* 3-D dark card — neutral white border */
   .metal-card {
-    background: linear-gradient(145deg, #1C2128 0%, #13161D 58%, #181C24 100%);
-    border: 1px solid rgba(168,180,190,0.18);
+    background: linear-gradient(145deg, #1A1A1A 0%, #111111 58%, #161616 100%);
+    border: 1px solid rgba(255,255,255,0.09);
     box-shadow:
-      inset 0 1px 0 rgba(200,212,222,0.13),
-      inset 0 -1px 0 rgba(0,0,0,0.45),
-      0 4px 14px rgba(0,0,0,0.45),
-      0 16px 48px rgba(0,0,0,0.3);
+      inset 0 1px 0 rgba(255,255,255,0.04),
+      inset 0 -1px 0 rgba(0,0,0,0.6),
+      0 4px 14px rgba(0,0,0,0.55),
+      0 16px 48px rgba(0,0,0,0.35);
   }
 
   .metal-card-hover { transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease; }
   .metal-card-hover:hover {
-    border-color: rgba(168,180,190,0.42);
+    border-color: rgba(255,255,255,0.18);
     box-shadow:
-      inset 0 1px 0 rgba(200,212,222,0.22),
-      inset 0 -1px 0 rgba(0,0,0,0.45),
-      0 8px 24px rgba(0,0,0,0.55),
-      0 24px 64px rgba(0,0,0,0.38),
-      0 0 50px rgba(168,180,190,0.05);
+      inset 0 1px 0 rgba(255,255,255,0.07),
+      inset 0 -1px 0 rgba(0,0,0,0.55),
+      0 8px 24px rgba(0,0,0,0.6),
+      0 24px 64px rgba(0,0,0,0.4),
+      0 0 40px rgba(255,255,255,0.03);
     transform: translateY(-2px);
   }
 
-  /* Brushed silver button */
+  /* Orange CTA button */
   .metal-btn {
-    background: linear-gradient(165deg, #BCC8D2 0%, #A8B4BE 38%, #8C9CA8 74%, #9AAAB4 100%);
-    color: #080A0C !important;
+    background: linear-gradient(165deg, #FF8C38 0%, #FF6A00 40%, #E05500 78%, #FF7020 100%);
+    color: #FFFFFF !important;
     font-weight: 800;
     box-shadow:
-      inset 0 1px 0 rgba(255,255,255,0.3),
-      inset 0 -1.5px 0 rgba(0,0,0,0.22),
-      0 4px 16px rgba(0,0,0,0.5),
-      0 1px 3px rgba(0,0,0,0.35);
+      inset 0 1px 0 rgba(255,255,255,0.22),
+      inset 0 -1.5px 0 rgba(0,0,0,0.3),
+      0 4px 20px rgba(255,106,0,0.45),
+      0 1px 3px rgba(0,0,0,0.4);
   }
   .metal-btn:hover {
-    background: linear-gradient(165deg, #CCD8E2 0%, #B8C6D0 38%, #9AAEBB 74%, #AABEC8 100%);
+    background: linear-gradient(165deg, #FFA050 0%, #FF7A10 40%, #F06010 78%, #FF8030 100%);
     box-shadow:
-      inset 0 1px 0 rgba(255,255,255,0.42),
-      inset 0 -1.5px 0 rgba(0,0,0,0.2),
-      0 6px 24px rgba(0,0,0,0.62),
-      0 0 40px rgba(168,180,190,0.14);
+      inset 0 1px 0 rgba(255,255,255,0.30),
+      inset 0 -1.5px 0 rgba(0,0,0,0.25),
+      0 6px 28px rgba(255,106,0,0.60),
+      0 0 50px rgba(255,106,0,0.28);
     transform: translateY(-1px);
   }
 
-  /* Metallic divider */
+  /* Orange divider rule */
   .metal-rule {
     height: 1px;
     background: linear-gradient(
       90deg,
       transparent 0%,
-      rgba(168,180,190,0.25) 20%,
-      rgba(200,212,222,0.45) 50%,
-      rgba(168,180,190,0.25) 80%,
+      rgba(255,106,0,0.2) 20%,
+      rgba(255,140,56,0.45) 50%,
+      rgba(255,106,0,0.2) 80%,
       transparent 100%
     );
   }
@@ -159,7 +159,7 @@
 
 @keyframes spotlight {
   0%,100% { opacity: 0.06; }
-  50%     { opacity: 0.12; }
+  50%     { opacity: 0.14; }
 }
 
 @keyframes fadeIn  { 0% { opacity:0 } 100% { opacity:1 } }
@@ -174,25 +174,25 @@
   100% { transform: translateX(0); }
 }
 
-/* ── Scroll / Interaction Animations ──────────── */
+/* ── Subtle Neutral Glow Animations ────────────── */
 @keyframes glow-pulse {
   0%,100% {
-    box-shadow: 0 0 24px rgba(168,180,190,0.06),
-                inset 0 1px 0 rgba(200,212,222,0.13);
+    box-shadow: 0 0 24px rgba(255,255,255,0.03),
+                inset 0 1px 0 rgba(255,255,255,0.04);
   }
   50% {
-    box-shadow: 0 0 55px rgba(168,180,190,0.20),
-                0 0 90px rgba(168,180,190,0.08),
-                inset 0 1px 0 rgba(200,212,222,0.28);
+    box-shadow: 0 0 55px rgba(255,255,255,0.08),
+                0 0 90px rgba(255,255,255,0.03),
+                inset 0 1px 0 rgba(255,255,255,0.08);
   }
 }
 
 @keyframes border-shimmer {
-  0%,100% { border-color: rgba(168,180,190,0.38); }
+  0%,100% { border-color: rgba(255,255,255,0.14); }
   50% {
-    border-color: rgba(208,220,228,0.78);
-    box-shadow: 0 0 28px rgba(168,180,190,0.22),
-                0 0 60px rgba(168,180,190,0.10);
+    border-color: rgba(255,255,255,0.32);
+    box-shadow: 0 0 28px rgba(255,255,255,0.06),
+                0 0 60px rgba(255,255,255,0.03);
   }
 }
 
@@ -214,9 +214,9 @@
   100% { transform: scaleX(1); opacity: 0; }
 }
 
-.animate-glow-pulse  { animation: glow-pulse 3s ease-in-out infinite; }
+.animate-glow-pulse     { animation: glow-pulse 3s ease-in-out infinite; }
 .animate-border-shimmer { animation: border-shimmer 2.8s ease-in-out infinite; }
-.animate-float-orb   { animation: float-orb 8s ease-in-out infinite; }
+.animate-float-orb      { animation: float-orb 8s ease-in-out infinite; }
 
 /* Tilt card preserve 3-D */
 .tilt-preserve { transform-style: preserve-3d; }

@@ -166,7 +166,7 @@ const TeamCard: React.FC<{ member: TeamMemberData; index: number }> = ({ member,
         <motion.div
           className="absolute inset-0 rounded-2xl pointer-events-none z-10"
           style={{
-            background: `radial-gradient(circle at ${glowX} ${glowY}, rgba(200,212,222,0.07) 0%, transparent 65%)`,
+            background: `radial-gradient(circle at ${glowX} ${glowY}, rgba(255,140,56,0.07) 0%, transparent 65%)`,
           }}
         />
 
@@ -184,7 +184,7 @@ const TeamCard: React.FC<{ member: TeamMemberData; index: number }> = ({ member,
             <span className="absolute bottom-1 right-1 w-3.5 h-3.5 bg-green-500 border-2 border-dark-lighter rounded-full" />
             <motion.div
               className="absolute inset-0 rounded-full"
-              style={{ border: '1px solid rgba(168,180,190,0.3)' }}
+              style={{ border: '1px solid rgba(255,106,0,0.3)' }}
               animate={{ scale: [1, 1.2, 1], opacity: [0.5, 0, 0.5] }}
               transition={{ duration: 3, repeat: Infinity, ease: 'easeOut', delay: index * 0.3 }}
             />

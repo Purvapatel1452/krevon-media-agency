@@ -34,7 +34,7 @@ const About: React.FC = () => {
 
     {/* Ghost "ABOUT" behind — parallax */}
     <motion.div
-      style={{ y: ghostY, x: ghostX, fontSize: 'clamp(80px, 16vw, 220px)', WebkitTextStroke: '1px rgba(168,180,190,0.04)' }}
+      style={{ y: ghostY, x: ghostX, fontSize: 'clamp(80px, 16vw, 220px)', WebkitTextStroke: '1px rgba(255,106,0,0.04)' }}
       className="absolute right-[-4%] top-0 font-black text-transparent select-none pointer-events-none leading-none"
     >
       ABOUT
@@ -48,7 +48,7 @@ const About: React.FC = () => {
           value="01"
           delay={0}
           className="font-black text-transparent select-none leading-none flex-shrink-0"
-          style={{ fontSize: 'clamp(60px, 10vw, 130px)', WebkitTextStroke: '1px rgba(168,180,190,0.13)' }}
+          style={{ fontSize: 'clamp(60px, 10vw, 130px)', WebkitTextStroke: '1px rgba(255,106,0,0.13)' }}
         />
         <div className="pb-2">
           <p className="text-primary text-xs font-semibold uppercase tracking-[0.2em] mb-1">
@@ -88,7 +88,7 @@ const About: React.FC = () => {
             <div className="flex items-center gap-4">
               <div
                 className="w-16 h-16 rounded-full overflow-hidden border-2 border-primary/30 flex-shrink-0"
-                style={{ boxShadow: 'inset 0 1px 0 rgba(200,212,222,0.2), 0 4px 16px rgba(0,0,0,0.5)' }}
+                style={{ boxShadow: 'inset 0 1px 0 rgba(255,140,56,0.2), 0 4px 16px rgba(0,0,0,0.5)' }}
               >
                 <img src="/krevon-logo.png" alt={founder.name} className="w-full h-full object-contain p-1.5" style={{ filter: 'invert(1)' }} />
               </div>

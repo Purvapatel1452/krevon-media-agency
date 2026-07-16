@@ -63,7 +63,7 @@ export default function Hero() {
           className="font-black text-transparent leading-none tracking-tighter"
           style={{
             fontSize: 'clamp(80px, 20vw, 300px)',
-            WebkitTextStroke: '1px rgba(168,180,190,0.05)',
+            WebkitTextStroke: '1px rgba(255,106,0,0.05)',
           }}
         >
           KREVON
@@ -72,7 +72,7 @@ export default function Hero() {
 
       {/* Spotlight glow 1 — parallax */}
       <motion.div
-        style={{ y: orb1Y, background: 'rgba(168,180,190,0.05)' }}
+        style={{ y: orb1Y, background: 'rgba(255,106,0,0.05)' }}
         className="absolute top-0 left-1/4 w-[700px] h-[500px] rounded-full blur-[130px] pointer-events-none animate-float-orb"
       />
 
@@ -81,13 +81,13 @@ export default function Hero() {
         style={{ y: orb2Y }}
         className="absolute bottom-0 right-1/4 w-[450px] h-[350px] rounded-full blur-[110px] pointer-events-none"
       >
-        <div className="w-full h-full" style={{ background: 'rgba(168,180,190,0.035)' }} />
+        <div className="w-full h-full" style={{ background: 'rgba(255,106,0,0.035)' }} />
       </motion.div>
 
       {/* Extra ambient orbs */}
       <div
         className="absolute top-1/3 right-1/3 w-[200px] h-[200px] rounded-full blur-[80px] pointer-events-none opacity-30"
-        style={{ background: 'rgba(168,180,190,0.06)', animation: 'float-orb 12s ease-in-out infinite 3s' }}
+        style={{ background: 'rgba(255,106,0,0.06)', animation: 'float-orb 12s ease-in-out infinite 3s' }}
       />
 
       <div className="container relative z-10 pt-28 pb-20">
@@ -119,8 +119,8 @@ export default function Hero() {
                 className="font-black leading-none mb-10"
                 style={{
                   fontSize: 'clamp(48px, 7.5vw, 96px)',
-                  color: 'rgba(168,180,190,0.12)',
-                  WebkitTextStroke: '1px rgba(168,180,190,0.16)',
+                  color: 'rgba(255,106,0,0.12)',
+                  WebkitTextStroke: '1px rgba(255,106,0,0.16)',
                 }}
               >
                 <WordReveal text="That Grow." delay={1.05} stagger={0.18} immediate />
@@ -188,14 +188,14 @@ export default function Hero() {
               <div
                 className="relative"
                 style={{
-                  filter: 'drop-shadow(0 0 36px rgba(168,180,190,0.2)) drop-shadow(0 8px 24px rgba(0,0,0,0.65))',
+                  filter: 'drop-shadow(0 0 36px rgba(255,106,0,0.2)) drop-shadow(0 8px 24px rgba(0,0,0,0.65))',
                 }}
               >
                 {/* Outer metallic ring */}
                 <div
                   className="w-32 h-32 rounded-full p-0.5"
                   style={{
-                    background: 'linear-gradient(145deg, rgba(200,212,222,0.6) 0%, rgba(168,180,190,0.2) 50%, rgba(100,120,130,0.5) 100%)',
+                    background: 'linear-gradient(145deg, rgba(255,140,56,0.6) 0%, rgba(255,106,0,0.2) 50%, rgba(204,85,0,0.5) 100%)',
                     boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.15), 0 8px 32px rgba(0,0,0,0.6)',
                   }}
                 >
@@ -215,13 +215,13 @@ export default function Hero() {
                 {/* Live pulse rings */}
                 <motion.div
                   className="absolute inset-0 rounded-full"
-                  style={{ border: '1px solid rgba(168,180,190,0.3)' }}
+                  style={{ border: '1px solid rgba(255,106,0,0.3)' }}
                   animate={{ scale: [1, 1.15, 1], opacity: [0.6, 0, 0.6] }}
                   transition={{ duration: 2.8, repeat: Infinity, ease: 'easeOut' }}
                 />
                 <motion.div
                   className="absolute inset-0 rounded-full"
-                  style={{ border: '1px solid rgba(168,180,190,0.15)' }}
+                  style={{ border: '1px solid rgba(255,106,0,0.15)' }}
                   animate={{ scale: [1, 1.28, 1], opacity: [0.4, 0, 0.4] }}
                   transition={{ duration: 2.8, repeat: Infinity, ease: 'easeOut', delay: 0.7 }}
                 />
@@ -235,7 +235,7 @@ export default function Hero() {
                 animate={{ opacity: 1, x: 0, scale: 1 }}
                 transition={{ duration: 0.55, delay: 0.4 + i * 0.09, type: 'spring', stiffness: 90, damping: 18 }}
                 whileHover={{ x: -3, scale: 1.02 }}
-                className="metal-card rounded-2xl p-5 flex items-center gap-5 group cursor-default transition-shadow duration-300 hover:shadow-[0_0_30px_rgba(168,180,190,0.08)]"
+                className="metal-card rounded-2xl p-5 flex items-center gap-5 group cursor-default transition-shadow duration-300 hover:shadow-[0_0_30px_rgba(255,106,0,0.08)]"
               >
                 <div
                   className="font-black gradient-text leading-none flex-shrink-0"

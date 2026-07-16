@@ -22,7 +22,7 @@ export default function Taglines() {
             <div
               className="w-14 h-14 rounded-full p-0.5 mx-auto"
               style={{
-                background: 'linear-gradient(145deg, rgba(200,212,222,0.5) 0%, rgba(168,180,190,0.15) 50%, rgba(100,120,130,0.45) 100%)',
+                background: 'linear-gradient(145deg, rgba(255,140,56,0.5) 0%, rgba(255,106,0,0.15) 50%, rgba(204,85,0,0.45) 100%)',
                 boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.1), 0 4px 16px rgba(0,0,0,0.5)',
               }}
             >

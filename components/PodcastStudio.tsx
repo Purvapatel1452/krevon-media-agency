@@ -113,9 +113,9 @@ const PodcastStudio: React.FC = () => (
             <div
               className="w-20 h-20 rounded-full p-0.5"
               style={{
-                background: 'linear-gradient(145deg, rgba(200,212,222,0.5) 0%, rgba(168,180,190,0.15) 50%, rgba(100,120,130,0.45) 100%)',
+                background: 'linear-gradient(145deg, rgba(255,140,56,0.5) 0%, rgba(255,106,0,0.15) 50%, rgba(204,85,0,0.45) 100%)',
                 boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.12), 0 6px 24px rgba(0,0,0,0.55)',
-                filter: 'drop-shadow(0 0 20px rgba(168,180,190,0.14))',
+                filter: 'drop-shadow(0 0 20px rgba(255,106,0,0.14))',
               }}
             >
               <div className="w-full h-full rounded-full p-0.5" style={{ background: '#131518' }}>
@@ -152,7 +152,7 @@ const PodcastStudio: React.FC = () => (
           className="relative rounded-2xl border border-primary/30 p-8 md:p-10 mb-14 overflow-hidden"
         >
           <div className="absolute inset-0 bg-gradient-to-r from-primary/20 via-primary/10 to-transparent" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_50%,#A8B4BE14_0%,transparent_55%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_50%,#FF6A0014_0%,transparent_55%)]" />
           <div className="relative flex flex-col lg:flex-row items-center justify-between gap-8">
             <div className="flex-1">
               <span className="inline-block px-3 py-1 bg-primary/20 border border-primary/30 rounded-full text-primary text-sm font-semibold mb-4">

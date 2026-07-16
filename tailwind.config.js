@@ -7,15 +7,15 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: "#A8B4BE",
-        secondary: "#C8D2DA",
-        accent: "#6A7880",
+        primary: "#FF6A00",
+        secondary: "#FF8C38",
+        accent: "#CC5500",
         dark: {
-          DEFAULT: "#0C0D0F",
-          light: "#131518",
-          lighter: "#1E2228",
+          DEFAULT: "#0A0A0A",
+          light: "#111111",
+          lighter: "#1A1A1A",
         },
-        light: "#F0F2F4",
+        light: "#F5F5F5",
       },
       fontFamily: {
         sans: ['Inter', 'sans-serif'],

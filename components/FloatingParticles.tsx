@@ -9,7 +9,7 @@ interface P {
   opacity: number; color: string; dx: number; dy: number;
 }
 
-const COLORS = ['#A8B4BE', '#C8D2DA', '#6A7880', '#D0DCE4', '#BCC8D2'];
+const COLORS = ['#FF6A00', '#FF8C38', '#CC5500', '#FFB070', '#FF7020'];
 
 export default function FloatingParticles({ count = 28 }: { count?: number }) {
   const [ps, setPs] = useState<P[]>([]);

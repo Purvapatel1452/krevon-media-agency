@@ -13,8 +13,8 @@ export default function ScrollProgressBar() {
           scaleX,
           transformOrigin: '0%',
           height: '100%',
-          background: 'linear-gradient(90deg,#6A7880 0%,#A8B4BE 28%,#D0DCE4 50%,#A8B4BE 72%,#6A7880 100%)',
-          boxShadow: '0 0 12px rgba(200,212,222,0.95), 0 0 28px rgba(168,180,190,0.55)',
+          background: 'linear-gradient(90deg,#CC5500 0%,#FF6A00 28%,#FFB070 50%,#FF6A00 72%,#CC5500 100%)',
+          boxShadow: '0 0 12px rgba(255,140,56,0.95), 0 0 28px rgba(255,106,0,0.55)',
         }}
       />
     </div>
