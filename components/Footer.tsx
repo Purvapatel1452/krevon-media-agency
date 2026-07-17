@@ -170,7 +170,7 @@ const Footer: React.FC = () => {
                     <span className="text-white/45 text-sm leading-relaxed">
                       Krevon Media Agency (Amazing Mahesana),<br />
                       Silicon Sponta, 46, Radhanpur Rd,<br />
-                      Bansari Twp, Mehsana, Gujarat 384005
+                      Bansari Twp, Mehsana, Gujarat 384002
                     </span>
                   </div>
                 </li>

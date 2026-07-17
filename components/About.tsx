@@ -144,7 +144,7 @@ const About: React.FC = () => {
             <div>
               <p className="text-white font-semibold text-sm mb-0.5">Our Studio &amp; Office</p>
               <p className="text-white/40 text-xs leading-relaxed">
-                Krevon Media Agency (Amazing Mahesana), Silicon Sponta, 46, Radhanpur Rd, Bansari Twp, Mehsana, Gujarat 384005
+                Krevon Media Agency (Amazing Mahesana), Silicon Sponta, 46, Radhanpur Rd, Bansari Twp, Mehsana, Gujarat 384002
               </p>
             </div>
           </div>

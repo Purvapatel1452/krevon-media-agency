@@ -21,6 +21,7 @@ const services = [
   { n: '08', title: 'Google Ads',             desc: 'Search, display & YouTube ads targeting the right audience at the right moment to drive measurable business results.',                                           icon: <MagnifyingGlassIcon className="w-5 h-5 text-primary" /> },
   { n: '09', title: 'Video Productions',      desc: 'High-quality shoots, brand films, podcast videos, and corporate productions with full post-production support.',                                                    icon: <VideoCameraIcon className="w-5 h-5 text-primary" />     },
   { n: '10', title: 'Marketing Strategy',     desc: 'Custom growth roadmaps, competitor analysis, audience research, and go-to-market strategies tailored to your brand.',                                               icon: <ClipboardDocumentListIcon className="w-5 h-5 text-primary" /> },
+  { n: '11', title: 'E-Commerce Handling',   desc: 'End-to-end e-commerce management — product listings, store setup, catalogue design, order flow optimization, and performance marketing to drive online sales.',      icon: <SparklesIcon className="w-5 h-5 text-primary" /> },
 ];
 
 const managementFeatures = [

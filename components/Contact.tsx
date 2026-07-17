@@ -57,7 +57,7 @@ const channels = [
   },
   {
     label: 'Location',
-    value: 'Krevon Media Agency (Amazing Mahesana), Silicon Sponta, 46, Radhanpur Rd, Bansari Twp, Mehsana, Gujarat 384005',
+    value: 'Krevon Media Agency (Amazing Mahesana), Silicon Sponta, 46, Radhanpur Rd, Bansari Twp, Mehsana, Gujarat 384002',
     href: 'https://maps.google.com/?q=23.618698,72.350159',
     icon: <MapPinIcon className="w-5 h-5" />,
     color: 'text-blue-400',
