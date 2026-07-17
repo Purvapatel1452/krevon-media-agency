@@ -14,7 +14,7 @@ const heroStats = [
   { value: '100+', label: 'Brands Served',    icon: <BuildingOffice2Icon className="w-5 h-5" /> },
   { value: '31K+', label: 'Instagram Reach',  icon: <MegaphoneIcon       className="w-5 h-5" /> },
   { value: '500+', label: 'Reels Created',    icon: <RocketLaunchIcon    className="w-5 h-5" /> },
-  { value: '2+',   label: 'Years Experience', icon: <TrophyIcon          className="w-5 h-5" /> },
+  { value: '3+',   label: 'Years Experience', icon: <TrophyIcon          className="w-5 h-5" /> },
 ];
 
 const platforms = [
