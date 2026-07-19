@@ -1,11 +1,11 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { BoltIcon, ChartBarIcon, ChartPieIcon, SparklesIcon } from '@heroicons/react/24/outline';
+import { BoltIcon, ChartBarIcon, ChartPieIcon } from '@heroicons/react/24/outline';
 
 const taglines = [
   { text: 'From Idea to Identity – We Build It All.',  icon: <BoltIcon      className="w-5 h-5" /> },
-  { text: "Your Brand's Growth Is Our Only Goal.",     icon: <SparklesIcon  className="w-5 h-5" /> },
+  { text: "Your Brand's Growth Is Our Only Goal.",     icon: <BoltIcon      className="w-5 h-5" /> },
   { text: 'Content That Converts, Brands That Last.',  icon: <ChartBarIcon  className="w-5 h-5" /> },
   { text: 'Strategy First. Execution Always.',         icon: <ChartPieIcon  className="w-5 h-5" /> },
 ];

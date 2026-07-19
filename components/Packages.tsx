@@ -3,7 +3,7 @@
 import React, { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { WordReveal, NumberWipe, EyebrowSlide } from './RevealText';
-import { CheckCircleIcon, RocketLaunchIcon, SparklesIcon, TrophyIcon, ArrowRightIcon } from '@heroicons/react/24/outline';
+import { CheckCircleIcon, ArrowTrendingUpIcon, ChartBarIcon, GlobeAltIcon, ArrowRightIcon } from '@heroicons/react/24/outline';
 
 interface Plan {
   name: string;
@@ -19,7 +19,7 @@ const plans: Plan[] = [
     name: 'Starter',
     tier: 'Entry',
     tagline: 'The perfect entry point for businesses stepping into the digital world.',
-    icon: <RocketLaunchIcon className="w-5 h-5 text-primary" />,
+    icon: <ArrowTrendingUpIcon className="w-5 h-5 text-primary" />,
     features: [
       'Brand identity consultation',
       '8 social media posts/month',
@@ -33,7 +33,7 @@ const plans: Plan[] = [
     name: 'Growth',
     tier: 'Most Popular',
     tagline: 'Built for brands serious about consistent growth and a stronger digital presence.',
-    icon: <SparklesIcon className="w-5 h-5 text-primary" />,
+    icon: <ChartBarIcon className="w-5 h-5 text-primary" />,
     featured: true,
     features: [
       'Complete brand identity package',
@@ -50,7 +50,7 @@ const plans: Plan[] = [
     name: 'Premium',
     tier: 'Elite',
     tagline: 'For ambitious brands ready to dominate every channel and lead their market.',
-    icon: <TrophyIcon className="w-5 h-5 text-primary" />,
+    icon: <GlobeAltIcon className="w-5 h-5 text-primary" />,
     features: [
       'Full brand building & identity system',
       '20+ posts/month (multi-platform)',

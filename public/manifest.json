@@ -28,10 +28,10 @@
   "start_url": "/",
   "display": "standalone",
   "orientation": "portrait",
-  "theme_color": "#8B5CF6",
+  "theme_color": "#FF6A00",
   "background_color": "#050505",
   "lang": "en",
   "scope": "/",
-  "categories": ["business", "productivity"],
+  "categories": ["business", "marketing", "productivity"],
   "screenshots": []
 }

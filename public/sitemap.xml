@@ -4,58 +4,58 @@
 
   <!-- Main page -->
   <url>
-    <loc>https://krevon.media/</loc>
-    <lastmod>2026-06-05</lastmod>
+    <loc>https://www.krevonmedia.com/</loc>
+    <lastmod>2026-07-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
 
   <!-- Section anchors – treated as separate SEO targets -->
   <url>
-    <loc>https://krevon.media/#about</loc>
-    <lastmod>2026-06-05</lastmod>
+    <loc>https://www.krevonmedia.com/#about</loc>
+    <lastmod>2026-07-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://krevon.media/#services</loc>
-    <lastmod>2026-06-05</lastmod>
+    <loc>https://www.krevonmedia.com/#services</loc>
+    <lastmod>2026-07-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
-    <loc>https://krevon.media/#podcast</loc>
-    <lastmod>2026-06-05</lastmod>
+    <loc>https://www.krevonmedia.com/#podcast</loc>
+    <lastmod>2026-07-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://krevon.media/#portfolio</loc>
-    <lastmod>2026-06-05</lastmod>
+    <loc>https://www.krevonmedia.com/#portfolio</loc>
+    <lastmod>2026-07-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://krevon.media/#team</loc>
-    <lastmod>2026-06-05</lastmod>
+    <loc>https://www.krevonmedia.com/#team</loc>
+    <lastmod>2026-07-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <url>
-    <loc>https://krevon.media/#packages</loc>
-    <lastmod>2026-06-05</lastmod>
+    <loc>https://www.krevonmedia.com/#packages</loc>
+    <lastmod>2026-07-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://krevon.media/#contact</loc>
-    <lastmod>2026-06-05</lastmod>
+    <loc>https://www.krevonmedia.com/#contact</loc>
+    <lastmod>2026-07-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>

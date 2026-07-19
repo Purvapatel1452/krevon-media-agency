@@ -5,7 +5,7 @@ Allow: /
 Disallow: /static/js/*.map
 
 # Sitemap location
-Sitemap: https://krevon.media/sitemap.xml
+Sitemap: https://www.krevonmedia.com/sitemap.xml
 
 # Crawl delay (optional – helps avoid server overload)
 Crawl-delay: 1

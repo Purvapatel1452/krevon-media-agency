@@ -5,23 +5,23 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { WordReveal, NumberWipe, EyebrowSlide } from './RevealText';
 import {
   BuildingOffice2Icon, ChartBarIcon, MegaphoneIcon, FilmIcon,
-  UserGroupIcon, RocketLaunchIcon, VideoCameraIcon,
-  ClipboardDocumentListIcon, CheckCircleIcon, SparklesIcon,
+  UserGroupIcon, BoltIcon, VideoCameraIcon,
+  ClipboardDocumentListIcon, CheckCircleIcon, ShoppingBagIcon,
   MagnifyingGlassIcon, PaintBrushIcon,
 } from '@heroicons/react/24/outline';
 
 const services = [
-  { n: '01', title: 'Brand Building',         desc: 'Complete brand identity: logo, visual system, color palette, typography, brand guidelines, and brand voice — everything to stand out.',                                     icon: <BuildingOffice2Icon className="w-5 h-5 text-primary" /> },
+  { n: '01', title: 'Brand Building',         desc: 'Complete brand identity: logo, visual system, color palette, typography, brand guidelines, and brand voice — everything to stand out.',                                     icon: <PaintBrushIcon className="w-5 h-5 text-primary" /> },
   { n: '02', title: 'Social Media Marketing', desc: 'Full management of Instagram, Facebook & LinkedIn — content calendar, daily posting, community engagement, and growth strategy.',                                    icon: <ChartBarIcon className="w-5 h-5 text-primary" />        },
   { n: '03', title: 'Digital Marketing',      desc: 'Full-funnel digital strategies that drive qualified traffic, generate leads, and convert customers across every digital channel.',                                      icon: <MegaphoneIcon className="w-5 h-5 text-primary" />       },
   { n: '04', title: 'Graphic Design',         desc: 'Scroll-stopping posts, banners, thumbnails, marketing creatives, and brand collateral designed to capture attention and convert.',                                   icon: <PaintBrushIcon className="w-5 h-5 text-primary" />      },
   { n: '05', title: 'Video Editing',          desc: 'Reels, brand films, ad creatives, and short-form content — raw footage transformed into polished, high-impact video.',                                               icon: <FilmIcon className="w-5 h-5 text-primary" />            },
   { n: '06', title: 'Influencer Marketing',   desc: 'We connect your brand with the right creators — from nano to macro — handling outreach, briefing, and full campaign delivery.',                                      icon: <UserGroupIcon className="w-5 h-5 text-primary" />       },
-  { n: '07', title: 'Meta Ads',               desc: 'Facebook & Instagram paid advertising campaigns designed to maximise reach, engagement, and ROI for your brand.',                                                 icon: <RocketLaunchIcon className="w-5 h-5 text-primary" />    },
+  { n: '07', title: 'Meta Ads',               desc: 'Facebook & Instagram paid advertising campaigns designed to maximise reach, engagement, and ROI for your brand.',                                                 icon: <BoltIcon className="w-5 h-5 text-primary" />    },
   { n: '08', title: 'Google Ads',             desc: 'Search, display & YouTube ads targeting the right audience at the right moment to drive measurable business results.',                                           icon: <MagnifyingGlassIcon className="w-5 h-5 text-primary" /> },
   { n: '09', title: 'Video Productions',      desc: 'High-quality shoots, brand films, podcast videos, and corporate productions with full post-production support.',                                                    icon: <VideoCameraIcon className="w-5 h-5 text-primary" />     },
   { n: '10', title: 'Marketing Strategy',     desc: 'Custom growth roadmaps, competitor analysis, audience research, and go-to-market strategies tailored to your brand.',                                               icon: <ClipboardDocumentListIcon className="w-5 h-5 text-primary" /> },
-  { n: '11', title: 'E-Commerce Handling',   desc: 'End-to-end e-commerce management — product listings, store setup, catalogue design, order flow optimization, and performance marketing to drive online sales.',      icon: <SparklesIcon className="w-5 h-5 text-primary" /> },
+  { n: '11', title: 'E-Commerce Handling',   desc: 'End-to-end e-commerce management — product listings, store setup, catalogue design, order flow optimization, and performance marketing to drive online sales.',      icon: <ShoppingBagIcon className="w-5 h-5 text-primary" /> },
 ];
 
 const managementFeatures = [
@@ -122,7 +122,7 @@ const Services: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
           <div>
             <div className="inline-flex items-center gap-2 px-3 py-1 bg-primary/10 border border-primary/20 rounded-full text-primary text-xs font-semibold mb-4">
-              <SparklesIcon className="w-3.5 h-3.5" />
+              <ShoppingBagIcon className="w-3.5 h-3.5" />
               Fully Managed
             </div>
             <h3 className="text-xl md:text-2xl font-bold text-white mb-3">Complete Brand Management</h3>

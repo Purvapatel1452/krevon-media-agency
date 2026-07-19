@@ -3,18 +3,22 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
 import {
-  SparklesIcon, ChevronDownIcon, MegaphoneIcon,
-  BuildingOffice2Icon, RocketLaunchIcon, TrophyIcon,
+  ChevronDownIcon,
+  BuildingStorefrontIcon,
+  UsersIcon,
+  VideoCameraIcon,
+  StarIcon,
+  BoltIcon,
 } from '@heroicons/react/24/outline';
 import FloatingParticles from './FloatingParticles';
 import AnimatedCounter from './AnimatedCounter';
 import { CharReveal, WordReveal } from './RevealText';
 
 const heroStats = [
-  { value: '100+', label: 'Brands Served',    icon: <BuildingOffice2Icon className="w-5 h-5" /> },
-  { value: '31K+', label: 'Instagram Reach',  icon: <MegaphoneIcon       className="w-5 h-5" /> },
-  { value: '500+', label: 'Reels Created',    icon: <RocketLaunchIcon    className="w-5 h-5" /> },
-  { value: '3+',   label: 'Years Experience', icon: <TrophyIcon          className="w-5 h-5" /> },
+  { value: '100+', label: 'Brands Served',    icon: <BuildingStorefrontIcon className="w-5 h-5" /> },
+  { value: '31K+', label: 'Instagram Reach',  icon: <UsersIcon              className="w-5 h-5" /> },
+  { value: '500+', label: 'Reels Created',    icon: <VideoCameraIcon        className="w-5 h-5" /> },
+  { value: '3+',   label: 'Years Experience', icon: <StarIcon               className="w-5 h-5" /> },
 ];
 
 const platforms = [
@@ -90,7 +94,7 @@ export default function Hero() {
         style={{ background: 'rgba(255,106,0,0.06)', animation: 'float-orb 12s ease-in-out infinite 3s' }}
       />
 
-      <div className="container relative z-10 pt-16 md:pt-24 lg:pt-28 pb-12 md:pb-20">
+      <div className="container relative z-10 pt-28 pb-12 md:pb-20">
         <div className="grid lg:grid-cols-5 gap-y-8 gap-x-10 lg:gap-16 items-center">
 
           {/* Left — 3 cols */}
@@ -102,10 +106,11 @@ export default function Hero() {
           >
             <motion.div
               variants={itemVariants}
-              className="inline-flex items-center gap-2 px-4 py-2 metal-card rounded-full text-primary text-sm font-semibold mb-6 lg:mb-10"
+              className="inline-flex items-center gap-2 px-3 py-2 metal-card rounded-full text-primary text-sm font-semibold mb-6 lg:mb-10"
             >
-              <SparklesIcon className="w-4 h-4" />
-              Krevon Media Agency — Premium Digital Growth Partner
+              <BoltIcon className="w-4 h-4 flex-shrink-0" />
+              <span className="sm:hidden">Premium Media Agency</span>
+              <span className="hidden sm:inline">Krevon Media Agency — Premium Digital Growth Partner</span>
             </motion.div>
 
             <div>
