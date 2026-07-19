@@ -90,8 +90,8 @@ export default function Hero() {
         style={{ background: 'rgba(255,106,0,0.06)', animation: 'float-orb 12s ease-in-out infinite 3s' }}
       />
 
-      <div className="container relative z-10 pt-28 pb-20">
-        <div className="grid lg:grid-cols-5 gap-10 lg:gap-16 items-center">
+      <div className="container relative z-10 pt-16 md:pt-24 lg:pt-28 pb-12 md:pb-20">
+        <div className="grid lg:grid-cols-5 gap-y-8 gap-x-10 lg:gap-16 items-center">
 
           {/* Left — 3 cols */}
           <motion.div
@@ -102,7 +102,7 @@ export default function Hero() {
           >
             <motion.div
               variants={itemVariants}
-              className="inline-flex items-center gap-2 px-4 py-2 metal-card rounded-full text-primary text-sm font-semibold mb-10"
+              className="inline-flex items-center gap-2 px-4 py-2 metal-card rounded-full text-primary text-sm font-semibold mb-6 lg:mb-10"
             >
               <SparklesIcon className="w-4 h-4" />
               Krevon Media Agency — Premium Digital Growth Partner
@@ -129,12 +129,12 @@ export default function Hero() {
 
             <motion.p
               variants={itemVariants}
-              className="text-white/50 text-lg md:text-xl mb-10 max-w-lg leading-relaxed"
+              className="text-white/50 text-base md:text-xl mb-7 lg:mb-10 max-w-lg leading-relaxed"
             >
               Creative strategies. Strong identities. Digital impact that drives real results.
             </motion.p>
 
-            <motion.div variants={itemVariants} className="flex flex-wrap gap-4 mb-12">
+            <motion.div variants={itemVariants} className="flex flex-wrap gap-3 md:gap-4 mb-8 lg:mb-12">
               <motion.a
                 href="#contact"
                 className="metal-btn btn px-8 py-3.5 text-base rounded-xl"
@@ -173,17 +173,17 @@ export default function Hero() {
 
           {/* Right — stat column, 2 cols */}
           <motion.div
-            initial={{ opacity: 0, x: 40 }}
-            animate={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.3, type: 'spring', stiffness: 80, damping: 20 }}
             className="lg:col-span-2 space-y-3"
           >
-            {/* Logo card */}
+            {/* Logo card — hidden on mobile (takes up too much space) */}
             <motion.div
               initial={{ opacity: 0, scale: 0.8, y: -20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.2, type: 'spring', stiffness: 100, damping: 18 }}
-              className="flex justify-center pb-2"
+              className="hidden sm:flex justify-center pb-2"
             >
               <div
                 className="relative"
@@ -191,19 +191,14 @@ export default function Hero() {
                   filter: 'drop-shadow(0 0 36px rgba(255,106,0,0.2)) drop-shadow(0 8px 24px rgba(0,0,0,0.65))',
                 }}
               >
-                {/* Outer metallic ring */}
                 <div
-                  className="w-32 h-32 rounded-full p-0.5"
+                  className="w-28 h-28 md:w-32 md:h-32 rounded-full p-0.5"
                   style={{
                     background: 'linear-gradient(145deg, rgba(255,140,56,0.6) 0%, rgba(255,106,0,0.2) 50%, rgba(204,85,0,0.5) 100%)',
                     boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.15), 0 8px 32px rgba(0,0,0,0.6)',
                   }}
                 >
-                  {/* Inner dark ring */}
-                  <div
-                    className="w-full h-full rounded-full p-0.5"
-                    style={{ background: '#0C0D0F' }}
-                  >
+                  <div className="w-full h-full rounded-full p-0.5" style={{ background: '#0C0D0F' }}>
                     <img
                       src="/krevon-logo.png"
                       alt="Krevon Media Agency"
@@ -212,7 +207,6 @@ export default function Hero() {
                     />
                   </div>
                 </div>
-                {/* Live pulse rings */}
                 <motion.div
                   className="absolute inset-0 rounded-full"
                   style={{ border: '1px solid rgba(255,106,0,0.3)' }}
@@ -228,38 +222,59 @@ export default function Hero() {
               </div>
             </motion.div>
 
-            {heroStats.map((stat, i) => (
-              <motion.div
-                key={stat.label}
-                initial={{ opacity: 0, x: 32, scale: 0.94 }}
-                animate={{ opacity: 1, x: 0, scale: 1 }}
-                transition={{ duration: 0.55, delay: 0.4 + i * 0.09, type: 'spring', stiffness: 90, damping: 18 }}
-                whileHover={{ x: -3, scale: 1.02 }}
-                className="metal-card rounded-2xl p-5 flex items-center gap-5 group cursor-default transition-shadow duration-300 hover:shadow-[0_0_30px_rgba(255,106,0,0.08)]"
-              >
-                <div
-                  className="font-black gradient-text leading-none flex-shrink-0"
-                  style={{ fontSize: 'clamp(32px, 4vw, 44px)' }}
+            {/* Stats — 2-col grid on mobile, stacked cards on desktop */}
+            <div className="grid grid-cols-2 gap-3 sm:hidden">
+              {heroStats.map((stat, i) => (
+                <motion.div
+                  key={stat.label}
+                  initial={{ opacity: 0, y: 16 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.45, delay: 0.35 + i * 0.07 }}
+                  className="metal-card rounded-2xl p-4 flex flex-col gap-1"
                 >
-                  <AnimatedCounter value={stat.value} />
-                </div>
-                <div className="flex-1">
-                  <p className="text-white font-semibold text-sm">{stat.label}</p>
-                </div>
-                <div className="text-primary/35 group-hover:text-primary/75 transition-colors duration-300">
-                  {stat.icon}
-                </div>
-              </motion.div>
-            ))}
+                  <div className="font-black gradient-text text-3xl leading-none">
+                    <AnimatedCounter value={stat.value} />
+                  </div>
+                  <p className="text-white/50 text-xs font-medium leading-tight">{stat.label}</p>
+                </motion.div>
+              ))}
+            </div>
+
+            {/* Stats — full cards on sm+ */}
+            <div className="hidden sm:flex flex-col gap-3">
+              {heroStats.map((stat, i) => (
+                <motion.div
+                  key={stat.label}
+                  initial={{ opacity: 0, x: 32, scale: 0.94 }}
+                  animate={{ opacity: 1, x: 0, scale: 1 }}
+                  transition={{ duration: 0.55, delay: 0.4 + i * 0.09, type: 'spring', stiffness: 90, damping: 18 }}
+                  whileHover={{ x: -3, scale: 1.02 }}
+                  className="metal-card rounded-2xl p-4 md:p-5 flex items-center gap-4 md:gap-5 group cursor-default transition-shadow duration-300 hover:shadow-[0_0_30px_rgba(255,106,0,0.08)]"
+                >
+                  <div
+                    className="font-black gradient-text leading-none flex-shrink-0"
+                    style={{ fontSize: 'clamp(28px, 3.5vw, 44px)' }}
+                  >
+                    <AnimatedCounter value={stat.value} />
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <p className="text-white font-semibold text-sm truncate">{stat.label}</p>
+                  </div>
+                  <div className="text-primary/35 group-hover:text-primary/75 transition-colors duration-300 flex-shrink-0">
+                    {stat.icon}
+                  </div>
+                </motion.div>
+              ))}
+            </div>
 
             <motion.div
-              initial={{ opacity: 0, x: 32 }}
-              animate={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.55, delay: 0.78, type: 'spring', stiffness: 90, damping: 18 }}
-              className="metal-card rounded-2xl p-5 flex items-center gap-3.5"
+              className="metal-card rounded-2xl p-4 md:p-5 flex items-center gap-3"
             >
-              <div className="rec-dot" />
-              <div>
+              <div className="rec-dot flex-shrink-0" />
+              <div className="min-w-0">
                 <p className="text-white font-semibold text-sm">Studio Open</p>
                 <p className="text-white/35 text-xs mt-0.5">Mon – Sun · 9:00 AM – 8:00 PM</p>
               </div>
