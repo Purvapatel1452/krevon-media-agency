@@ -112,9 +112,17 @@ export const metadata: Metadata = {
   },
 
   icons: {
-    icon:     [{ url: '/favicon.ico' }, { url: '/krevon-logo.png', type: 'image/png', sizes: '512x512' }],
-    shortcut: '/favicon.ico',
-    apple:    '/krevon-logo.png',
+    icon: [
+      { url: '/krevon-logo.png', type: 'image/png', sizes: '512x512' },
+      { url: '/krevon-logo.png', type: 'image/png', sizes: '192x192' },
+      { url: '/krevon-logo.png', type: 'image/png', sizes: '96x96'  },
+      { url: '/favicon.ico',     sizes: '48x48' },
+    ],
+    shortcut: '/krevon-logo.png',
+    apple: [
+      { url: '/krevon-logo.png', sizes: '512x512', type: 'image/png' },
+      { url: '/krevon-logo.png', sizes: '180x180', type: 'image/png' },
+    ],
   },
 
   manifest: '/manifest.json',
@@ -151,6 +159,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en-IN">
       <head>
+        {/* Explicit icon tags — crawlers see these before JS hydrates */}
+        <link rel="icon" type="image/png" sizes="512x512" href="/krevon-logo.png" />
+        <link rel="icon" type="image/png" sizes="192x192" href="/krevon-logo.png" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/krevon-logo.png" />
+        <link rel="shortcut icon" href="/krevon-logo.png" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link
