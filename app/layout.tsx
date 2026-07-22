@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   },
 
   description:
-    "Krevon Media Agency — Mahesana's #1 premium brand building, social media marketing, Meta Ads, Google Ads, video production & podcast studio. Trusted by 100+ brands across Gujarat. Co-Founded by Nikhil Patel & Darshan Sathwara.",
+    "Krevon Media Agency — Mahesana's #1 premium brand building, social media marketing, Meta Ads, Google Ads, video production & podcast studio. Trusted by 25+ brands across Gujarat. Founded by Nikhil Patel & Darshan Sathwara.",
 
   keywords: [
     // Branded
@@ -56,7 +56,14 @@ export const metadata: Metadata = {
     // Video & podcast
     'video production', 'video marketing', 'video agency',
     'podcast studio', 'podcast production', 'reels creator',
-    'short form video', 'YouTube marketing',
+    'short form video', 'YouTube marketing', '850+ reels',
+    // E-commerce
+    'e-commerce marketing', 'ecommerce marketing', 'Shopify marketing',
+    'Shopify store management', 'Google AdSense', 'Google AdSense setup',
+    'online store marketing', 'product listing optimisation',
+    'e-commerce agency', 'shopify agency india',
+    // Location
+    'Silicon Sponta Mehsana', 'Radhanpur Road Mehsana', 'Bansari Township',
     // Location + service combos
     'media agency Mahesana', 'social media agency Mahesana',
     'digital marketing Mahesana', 'brand building Mahesana',
@@ -68,11 +75,13 @@ export const metadata: Metadata = {
     'digital marketing agency Mahesana', 'content creation Mahesana',
     'advertising agency Mahesana', 'advertising agency Gujarat',
     'best media agency mahesana', 'top marketing agency gujarat',
+    'e-commerce marketing Mahesana', 'Shopify agency Mahesana',
+    'e-commerce marketing Gujarat',
     // Discovery terms
     'social media expert mahesana', 'brand consultant mahesana',
-    'e-commerce marketing gujarat', 'influencer marketing gujarat',
-    'small business marketing india', 'startup branding india',
-    'reels agency india', 'social media growth india',
+    'influencer marketing gujarat', 'small business marketing india',
+    'startup branding india', 'reels agency india',
+    'social media growth india', '90K instagram reach',
   ],
 
   authors: [

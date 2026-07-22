@@ -57,7 +57,7 @@ const channels = [
   },
   {
     label: 'Location',
-    value: 'Krevon Media Agency (Amazing Mahesana), Silicon Sponta, 46, Radhanpur Rd, Bansari Twp, Mehsana, Gujarat 384002',
+    value: 'Sf-215, Silicon Sponta, Radhanpur Rd, Bansari Twp, Mehsana, Gujarat 384005',
     href: 'https://maps.google.com/?q=23.618698,72.350159',
     icon: <MapPinIcon className="w-5 h-5" />,
     color: 'text-blue-400',
@@ -119,8 +119,8 @@ const Contact: React.FC = () => {
     setStatus('sending');
     try {
       await emailjs.send(
-        'service_s7k3j9f',
-        'template_9y7ddar',
+        'service_fpckwii',
+        'template_db2uazg',
         {
           from_name: formData.from_name,
           from_email: formData.from_email,
@@ -128,7 +128,7 @@ const Contact: React.FC = () => {
           message: `From: ${formData.from_name}\nEmail: ${formData.from_email}\nPhone: ${formData.contact_number}\n\n${formData.message}`,
           to_email: 'krevonmedia@gmail.com',
         },
-        'u_rFbVMIR0twf9Ydb'
+        'sZRbavBJSkaDPU_5f'
       );
       setStatus('success');
       setFormData({ from_name: '', from_email: '', contact_number: '', message: '' });
@@ -347,8 +347,8 @@ const Contact: React.FC = () => {
               <div className="flex items-center gap-3 p-4 bg-dark-lighter rounded-xl border border-primary/15">
                 <div className="w-2.5 h-2.5 rounded-full bg-green-500 animate-pulse flex-shrink-0" />
                 <div>
-                  <p className="text-white text-sm font-semibold">Open 7 Days a Week</p>
-                  <p className="text-white/40 text-xs mt-0.5">9:00 AM – 8:00 PM</p>
+                  <p className="text-white text-sm font-semibold">Open Mon – Sat</p>
+                  <p className="text-white/40 text-xs mt-0.5">10:00 AM – 7:00 PM</p>
                 </div>
               </div>
             </motion.div>

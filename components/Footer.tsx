@@ -169,8 +169,8 @@ const Footer: React.FC = () => {
                     <MapPinIcon className="w-4 h-4 text-primary/60 mt-0.5 flex-shrink-0" />
                     <span className="text-white/45 text-sm leading-relaxed">
                       Krevon Media Agency (Amazing Mahesana),<br />
-                      Silicon Sponta, 46, Radhanpur Rd,<br />
-                      Bansari Twp, Mehsana, Gujarat 384002
+                      Sf-215, Silicon Sponta, Radhanpur Rd,<br />
+                      Bansari Twp, Mehsana, Gujarat 384005
                     </span>
                   </div>
                 </li>

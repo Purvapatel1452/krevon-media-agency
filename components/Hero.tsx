@@ -15,10 +15,10 @@ import AnimatedCounter from './AnimatedCounter';
 import { CharReveal, WordReveal } from './RevealText';
 
 const heroStats = [
-  { value: '100+', label: 'Brands Served',    icon: <BuildingStorefrontIcon className="w-5 h-5" /> },
-  { value: '31K+', label: 'Instagram Reach',  icon: <UsersIcon              className="w-5 h-5" /> },
-  { value: '500+', label: 'Reels Created',    icon: <VideoCameraIcon        className="w-5 h-5" /> },
-  { value: '3+',   label: 'Years Experience', icon: <StarIcon               className="w-5 h-5" /> },
+  { value: '25+',  label: 'Brands Served',    icon: <BuildingStorefrontIcon className="w-5 h-5" /> },
+  { value: '90K+', label: 'Instagram Reach',  icon: <UsersIcon              className="w-5 h-5" /> },
+  { value: '850+', label: 'Reels Created',    icon: <VideoCameraIcon        className="w-5 h-5" /> },
+  { value: '3',    label: 'Years Experience', icon: <StarIcon               className="w-5 h-5" /> },
 ];
 
 const platforms = [
@@ -281,7 +281,7 @@ export default function Hero() {
               <div className="rec-dot flex-shrink-0" />
               <div className="min-w-0">
                 <p className="text-white font-semibold text-sm">Studio Open</p>
-                <p className="text-white/35 text-xs mt-0.5">Mon – Sun · 9:00 AM – 8:00 PM</p>
+                <p className="text-white/35 text-xs mt-0.5">Mon – Sat · 10:00 AM – 7:00 PM</p>
               </div>
             </motion.div>
           </motion.div>

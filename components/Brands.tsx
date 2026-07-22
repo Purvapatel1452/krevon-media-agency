@@ -127,7 +127,7 @@ const Brands: React.FC = () => (
             </motion.span>
             <h2 className="heading-lg text-white mb-4">Brands That Trust Krevon</h2>
             <p className="text-white/60 text-lg max-w-2xl mx-auto">
-              100+ local businesses and growing brands across Mehsana and Gujarat — all building their digital presence with us.
+              25+ local businesses and growing brands across Mehsana and Gujarat — all building their digital presence with us.
             </p>
           </div>
 

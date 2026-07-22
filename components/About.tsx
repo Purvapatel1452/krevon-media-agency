@@ -66,13 +66,17 @@ const About: React.FC = () => {
         {[
           {
             name: 'Nikhil Patel',
-            role: 'Co-Founder',
+            role: 'Founder',
+            photo: '/nikhil-patel.jpg',
+            photoFocus: '60% 20%',
             quote: 'We built Krevon to give every ambitious local brand the same quality of strategy and content that big companies get. Growth is not a privilege — it\'s a process.',
             delay: 0,
           },
           {
             name: 'Darshan Sathwara',
-            role: 'Co-Founder',
+            role: 'Founder',
+            photo: '/darshan-sathwara.jpg',
+            photoFocus: 'center 12%',
             quote: 'Content without strategy is just noise. Everything we create at Krevon is built around a plan — the right message, the right platform, the right time.',
             delay: 0.12,
           },
@@ -90,7 +94,12 @@ const About: React.FC = () => {
                 className="w-16 h-16 rounded-full overflow-hidden border-2 border-primary/30 flex-shrink-0"
                 style={{ boxShadow: 'inset 0 1px 0 rgba(255,140,56,0.2), 0 4px 16px rgba(0,0,0,0.5)' }}
               >
-                <img src="/krevon-logo.png" alt={founder.name} className="w-full h-full object-contain p-1.5" style={{ filter: 'invert(1)' }} />
+                <img
+                  src={founder.photo}
+                  alt={founder.name}
+                  className="w-full h-full object-cover"
+                  style={{ objectPosition: founder.photoFocus }}
+                />
               </div>
               <div>
                 <h3 className="text-lg font-bold text-white">{founder.name}</h3>
@@ -144,7 +153,7 @@ const About: React.FC = () => {
             <div>
               <p className="text-white font-semibold text-sm mb-0.5">Our Studio &amp; Office</p>
               <p className="text-white/40 text-xs leading-relaxed">
-                Krevon Media Agency (Amazing Mahesana), Silicon Sponta, 46, Radhanpur Rd, Bansari Twp, Mehsana, Gujarat 384002
+                Sf-215, Silicon Sponta, Radhanpur Rd, Bansari Twp, Mehsana, Gujarat 384005
               </p>
             </div>
           </div>

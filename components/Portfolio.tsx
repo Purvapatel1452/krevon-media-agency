@@ -90,10 +90,10 @@ const Portfolio: React.FC = () => {
         className="metal-card rounded-2xl p-6 mb-10 grid grid-cols-2 md:grid-cols-4 gap-6"
       >
         {[
-          { v: '100+', l: 'Brands Built' },
+          { v: '25+', l: 'Brands Built' },
           { v: '853+', l: 'Posts Published' },
-          { v: '500+', l: 'Reels Created' },
-          { v: '3+', l: 'Years of Excellence' },
+          { v: '850+', l: 'Reels Created' },
+          { v: '3', l: 'Years of Excellence' },
         ].map(a => (
           <div key={a.l} className="text-center">
             <div className="gradient-text font-black text-3xl md:text-4xl leading-none mb-1">

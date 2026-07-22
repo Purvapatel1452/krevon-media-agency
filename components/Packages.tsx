@@ -21,45 +21,48 @@ const plans: Plan[] = [
     tagline: 'The perfect entry point for businesses stepping into the digital world.',
     icon: <ArrowTrendingUpIcon className="w-5 h-5 text-primary" />,
     features: [
-      'Brand identity consultation',
-      '8 social media posts/month',
-      'Basic graphic design (posts & stories)',
-      '4 Reels per month (edit only)',
-      'Monthly performance report',
-      'Caption & hashtag strategy',
+      '3 Reels / month (1 voice-over + 2 cinematic)',
+      'Amazing Mahesana collab + boosting included',
+      '10 Posts / month with shooting & editing',
+      'AI-powered captions and hashtags',
+      '1 platform management',
+      'Monthly content calendar',
+      '24-hour support',
     ],
   },
   {
     name: 'Growth',
     tier: 'Most Popular',
-    tagline: 'Built for brands serious about consistent growth and a stronger digital presence.',
+    tagline: 'Advanced content with strategic depth for brands serious about growth.',
     icon: <ChartBarIcon className="w-5 h-5 text-primary" />,
     featured: true,
     features: [
-      'Complete brand identity package',
-      '15 posts/month (multi-platform)',
-      'Advanced graphic design & creatives',
-      '8 Reels/month (shoot + edit)',
-      'Monthly content calendar & strategy',
-      'Meta Ads campaign management',
-      'Active audience engagement',
-      'Weekly performance & growth report',
+      '5 Reels / month (2 voice-over + 3 cinematic)',
+      'Amazing Mahesana + city page collab, boosting included',
+      '15 Posts / month with advanced shooting & editing',
+      'AI captions and hashtags',
+      'Hook & scripting, audience guidance',
+      'Story content creation + monthly content calendar',
+      'E-commerce marketing',
+      'Shopify store marketing & management',
+      'Google Ads & Google AdSense setup',
     ],
   },
   {
     name: 'Premium',
     tier: 'Elite',
-    tagline: 'For ambitious brands ready to dominate every channel and lead their market.',
+    tagline: 'The ultimate brand growth engine for brands ready to dominate every channel.',
     icon: <GlobeAltIcon className="w-5 h-5 text-primary" />,
     features: [
-      'Full brand building & identity system',
-      '20+ posts/month (multi-platform)',
-      'Cinematic video production & reels',
-      'Full Meta Ads + Google Ads management',
-      'Influencer collaboration support',
-      'Custom marketing strategy & roadmap',
-      'Priority support & dedicated brand manager',
-      'Bi-weekly strategy calls',
+      '8 Reels / month (4 voice-over + 4 cinematic)',
+      'Amazing Mahesana + city page collab + model, boosting included',
+      '21 Posts / month with advanced shooting & editing',
+      'AI captions and hashtags',
+      'Full ad campaigns, hook & scripting',
+      'Audience guidance, story creation, platform management',
+      'E-commerce marketing & full management',
+      'Shopify + Google Ads & Shopping campaigns',
+      'Product listing SEO & conversion optimisation',
     ],
   },
 ];
@@ -90,7 +93,6 @@ const PricingCard: React.FC<{ plan: Plan; index: number }> = ({ plan, index }) =
   >
     {plan.featured && (
       <>
-        {/* Pulsing ambient glow */}
         <motion.div
           className="absolute inset-0 rounded-2xl pointer-events-none"
           animate={{ opacity: [0.4, 1, 0.4] }}
@@ -99,7 +101,6 @@ const PricingCard: React.FC<{ plan: Plan; index: number }> = ({ plan, index }) =
             background: 'radial-gradient(ellipse at 50% -10%, rgba(255,106,0,0.14) 0%, transparent 65%)',
           }}
         />
-        {/* Animated left accent bar */}
         <motion.div
           className="absolute top-0 left-0 bottom-0 w-1 rounded-l-2xl"
           style={{ background: 'linear-gradient(180deg, rgba(255,106,0,0.35) 0%, rgba(255,140,56,0.9) 50%, rgba(255,106,0,0.35) 100%)' }}
@@ -175,7 +176,6 @@ const Packages: React.FC = () => {
   return (
   <section ref={sectionRef} id="packages" className="section-padding bg-dark relative overflow-hidden">
 
-    {/* Ghost "PLANS" — parallax */}
     <motion.div
       style={{ y: ghostY, x: ghostX, fontSize: 'clamp(60px, 13vw, 180px)', WebkitTextStroke: '1px rgba(255,106,0,0.035)' }}
       className="absolute left-[-2%] top-0 font-black text-transparent select-none pointer-events-none leading-none"

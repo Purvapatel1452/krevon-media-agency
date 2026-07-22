@@ -24,16 +24,16 @@ const structuredData = {
       },
       image: `${SITE_URL}/krevon-logo.png`,
       description:
-        "Krevon Media Agency is Mahesana's #1 premium brand building, social media marketing, Meta Ads, Google Ads, video production and podcast studio. Founded by Nikhil Patel and Darshan Sathwara, serving 100+ brands across Gujarat and India.",
+        "Krevon Media Agency is Mahesana's #1 premium brand building, social media marketing, Meta Ads, Google Ads, video production and podcast studio. Founded by Nikhil Patel and Darshan Sathwara, serving 25+ brands across Gujarat and India.",
       slogan: 'We Build Brands That Grow.',
       foundingDate: '2021',
       numberOfEmployees: { '@type': 'QuantitativeValue', value: 10 },
       address: {
         '@type': 'PostalAddress',
-        streetAddress: 'Mahesana',
-        addressLocality: 'Mahesana',
+        streetAddress: 'Sf-215, Silicon Sponta, Radhanpur Rd, Bansari Twp',
+        addressLocality: 'Mehsana',
         addressRegion: 'Gujarat',
-        postalCode: '384002',
+        postalCode: '384005',
         addressCountry: 'IN',
       },
       geo: {
@@ -49,9 +49,9 @@ const structuredData = {
       ],
       openingHoursSpecification: {
         '@type': 'OpeningHoursSpecification',
-        dayOfWeek: ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'],
-        opens: '09:00',
-        closes: '20:00',
+        dayOfWeek: ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'],
+        opens: '10:00',
+        closes: '19:00',
       },
       contactPoint: [
         {
@@ -76,7 +76,7 @@ const structuredData = {
         },
       ],
       sameAs: [
-        'https://www.instagram.com/krevonmedia',
+        'https://www.instagram.com/krevon.media',
         'https://www.facebook.com/krevonmedia',
         'https://krevonmedia.com',
         'https://www.krevonmedia.com',
@@ -136,8 +136,18 @@ const structuredData = {
             itemOffered: {
               '@type': 'Service',
               name: 'Podcast Studio',
-              description: 'Professional podcast recording, production and distribution.',
+              description: 'Professional podcast studio currently being set up in Mehsana — recording, production and distribution launching soon.',
               provider: { '@id': `${SITE_URL}/#organization` },
+            },
+          },
+          {
+            '@type': 'Offer',
+            itemOffered: {
+              '@type': 'Service',
+              name: 'E-Commerce Marketing',
+              description: 'Shopify store marketing & management, Google Ads, Google AdSense, product listing, SEO and conversion optimisation.',
+              provider: { '@id': `${SITE_URL}/#organization` },
+              areaServed: 'IN',
             },
           },
         ],
@@ -150,7 +160,7 @@ const structuredData = {
         worstRating: '1',
       },
       keywords:
-        'media agency, social media agency, digital marketing, brand building, Meta Ads, Google Ads, video production, podcast studio, Mahesana, Gujarat, Krevon, Nikhil Patel, Darshan Sathwara',
+        'media agency, social media agency, digital marketing, brand building, Meta Ads, Google Ads, video production, podcast studio, e-commerce marketing, Shopify marketing, Google AdSense, Mehsana, Mahesana, Gujarat, Silicon Sponta, Krevon, Nikhil Patel, Darshan Sathwara, 90K Instagram reach, 850+ reels',
     },
 
     // ── 2. Website (enables Sitelinks search box in Google) ─────────────────
@@ -201,15 +211,15 @@ const structuredData = {
       name: 'Nikhil Patel',
       givenName: 'Nikhil',
       familyName: 'Patel',
-      jobTitle: 'Co-Founder & CEO',
+      jobTitle: 'Founder & CEO',
       description:
-        'Nikhil Patel is the Co-Founder of Krevon Media Agency, Mahesana — the leading brand building and digital marketing agency in Gujarat.',
+        'Nikhil Patel is the Founder of Krevon Media Agency, Mahesana — the leading brand building and digital marketing agency in Gujarat.',
       worksFor: { '@id': `${SITE_URL}/#organization` },
       url: SITE_URL,
       sameAs: [SITE_URL],
       address: {
         '@type': 'PostalAddress',
-        addressLocality: 'Mahesana',
+        addressLocality: 'Mehsana',
         addressRegion: 'Gujarat',
         addressCountry: 'IN',
       },
@@ -222,15 +232,15 @@ const structuredData = {
       name: 'Darshan Sathwara',
       givenName: 'Darshan',
       familyName: 'Sathwara',
-      jobTitle: 'Co-Founder & Creative Director',
+      jobTitle: 'Founder & Creative Director',
       description:
-        'Darshan Sathwara is the Co-Founder & Creative Director of Krevon Media Agency, Mahesana — the leading brand building and social media agency in Gujarat.',
+        'Darshan Sathwara is the Founder & Creative Director of Krevon Media Agency, Mahesana — the leading brand building and social media agency in Gujarat.',
       worksFor: { '@id': `${SITE_URL}/#organization` },
       url: SITE_URL,
       sameAs: [SITE_URL],
       address: {
         '@type': 'PostalAddress',
-        addressLocality: 'Mahesana',
+        addressLocality: 'Mehsana',
         addressRegion: 'Gujarat',
         addressCountry: 'IN',
       },
@@ -254,7 +264,7 @@ const structuredData = {
           name: 'Who founded Krevon Media Agency?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: 'Krevon Media Agency was co-founded by Nikhil Patel and Darshan Sathwara in Mahesana, Gujarat.',
+            text: 'Krevon Media Agency was founded by Nikhil Patel and Darshan Sathwara in Mahesana, Gujarat.',
           },
         },
         {
@@ -262,7 +272,7 @@ const structuredData = {
           name: 'Where is Krevon Media Agency located?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: 'Krevon Media Agency is located in Mahesana (Mehsana), Gujarat, India. They serve clients across Gujarat and all of India.',
+            text: 'Krevon Media Agency is located at Sf-215, Silicon Sponta, Radhanpur Rd, Bansari Twp, Mehsana, Gujarat 384005, India. Open Monday to Saturday, 10 AM to 7 PM.',
           },
         },
         {
@@ -270,7 +280,23 @@ const structuredData = {
           name: 'What services does Krevon Media Agency offer?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: 'Krevon Media Agency offers brand building, social media marketing, Meta Ads (Facebook & Instagram ads), Google Ads, video production, Instagram Reels creation, podcast studio services, content creation, and e-commerce marketing.',
+            text: 'Krevon Media Agency offers brand building, social media marketing, Meta Ads (Facebook & Instagram ads), Google Ads, video production, 850+ Instagram Reels created, e-commerce marketing, Shopify store management, Google AdSense setup, and podcast studio (coming soon).',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: 'Does Krevon Media Agency do e-commerce marketing?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Yes, Krevon Media Agency offers full e-commerce marketing including Shopify store marketing and management, Google Ads, Google AdSense setup, product listing optimisation, and conversion strategy.',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: 'Does Krevon Media have a podcast studio?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: "Krevon Media Agency is currently building Mehsana's first professional podcast studio. The setup is in progress and launching very soon. Contact us to reserve your recording slot.",
           },
         },
         {
@@ -278,7 +304,7 @@ const structuredData = {
           name: 'Is Krevon Media Agency the best media agency in Mahesana?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: "Yes, Krevon Media Agency is Mahesana's leading media agency, trusted by 100+ brands across Gujarat with 3+ years of experience in brand building and digital marketing.",
+            text: "Yes, Krevon Media Agency is Mahesana's leading media agency, trusted by 25+ brands across Gujarat with 3 years of experience in brand building and digital marketing.",
           },
         },
         {
