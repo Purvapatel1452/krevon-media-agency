@@ -24,10 +24,10 @@ const structuredData = {
       },
       image: `${SITE_URL}/krevon-logo.png`,
       description:
-        "Krevon Media Agency is Mahesana's #1 premium brand building, social media marketing, Meta Ads, Google Ads, video production and podcast studio. Founded by Nikhil Patel and Darshan Sathwara, serving 25+ brands across Gujarat and India.",
+        "Krevon Media Agency is Mahesana's #1 premium brand building, social media marketing, Meta Ads, Google Ads, video production and podcast studio. Founded by Nikhil Patel, serving 25+ brands across Gujarat and India.",
       slogan: 'We Build Brands That Grow.',
       foundingDate: '2021',
-      numberOfEmployees: { '@type': 'QuantitativeValue', value: 10 },
+      numberOfEmployees: { '@type': 'QuantitativeValue', value: 7 },
       address: {
         '@type': 'PostalAddress',
         streetAddress: 'Sf-215, Silicon Sponta, Radhanpur Rd, Bansari Twp',
@@ -66,12 +66,6 @@ const structuredData = {
           '@type': 'Person',
           '@id': `${SITE_URL}/#nikhil-patel`,
           name: 'Nikhil Patel',
-          sameAs: SITE_URL,
-        },
-        {
-          '@type': 'Person',
-          '@id': `${SITE_URL}/#darshan-sathwara`,
-          name: 'Darshan Sathwara',
           sameAs: SITE_URL,
         },
       ],
@@ -160,7 +154,7 @@ const structuredData = {
         worstRating: '1',
       },
       keywords:
-        'media agency, social media agency, digital marketing, brand building, Meta Ads, Google Ads, video production, podcast studio, e-commerce marketing, Shopify marketing, Google AdSense, Mehsana, Mahesana, Gujarat, Silicon Sponta, Krevon, Nikhil Patel, Darshan Sathwara, 90K Instagram reach, 850+ reels',
+        'media agency, social media agency, digital marketing, brand building, Meta Ads, Google Ads, video production, podcast studio, e-commerce marketing, Shopify marketing, Google AdSense, Mehsana, Mahesana, Gujarat, Silicon Sponta, Krevon, Nikhil Patel, 90K Instagram reach, 850+ reels',
     },
 
     // ── 2. Website (enables Sitelinks search box in Google) ─────────────────
@@ -225,28 +219,7 @@ const structuredData = {
       },
     },
 
-    // ── 5. Person — Darshan Sathwara ─────────────────────────────────────────
-    {
-      '@type': 'Person',
-      '@id': `${SITE_URL}/#darshan-sathwara`,
-      name: 'Darshan Sathwara',
-      givenName: 'Darshan',
-      familyName: 'Sathwara',
-      jobTitle: 'Founder & Creative Director',
-      description:
-        'Darshan Sathwara is the Founder & Creative Director of Krevon Media Agency, Mahesana — the leading brand building and social media agency in Gujarat.',
-      worksFor: { '@id': `${SITE_URL}/#organization` },
-      url: SITE_URL,
-      sameAs: [SITE_URL],
-      address: {
-        '@type': 'PostalAddress',
-        addressLocality: 'Mehsana',
-        addressRegion: 'Gujarat',
-        addressCountry: 'IN',
-      },
-    },
-
-    // ── 6. FAQ — helps rank for question-based searches ──────────────────────
+    // ── 5. FAQ — helps rank for question-based searches ──────────────────────
     {
       '@type': 'FAQPage',
       '@id': `${SITE_URL}/#faq`,
@@ -264,7 +237,7 @@ const structuredData = {
           name: 'Who founded Krevon Media Agency?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: 'Krevon Media Agency was founded by Nikhil Patel and Darshan Sathwara in Mahesana, Gujarat.',
+            text: 'Krevon Media Agency was founded by Nikhil Patel in Mahesana, Gujarat.',
           },
         },
         {

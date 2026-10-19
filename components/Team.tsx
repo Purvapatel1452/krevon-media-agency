@@ -26,16 +26,6 @@ const teamMembers: TeamMemberData[] = [
     photoFocus: '60% 20%',
   },
   {
-    name: 'Darshan Sathwara',
-    role: 'Founder',
-    bio: 'Co-builder of Krevon. Leads content strategy, copywriting, and platform planning — the mind behind every brand narrative.',
-    initials: 'DS',
-    gradient: 'from-primary to-secondary',
-
-    photo: '/darshan-sathwara.jpg',
-    photoFocus: 'center 12%',
-  },
-  {
     name: 'Dev Patel',
     role: 'Creative Director',
     bio: 'Leads campaign direction and visual identity. Every brand story told through his creative lens becomes a visual that stops the scroll.',
@@ -49,30 +39,6 @@ const teamMembers: TeamMemberData[] = [
     bio: 'Cinematic shoots, post-production mastery, and colour grading that makes every frame look like it belongs on the big screen.',
     initials: 'BP',
     gradient: 'from-slate-500 to-primary',
-
-  },
-  {
-    name: 'Nakshatra',
-    role: 'Video Editor',
-    bio: '4+ years of advanced editing. Crafts brand films and reels that communicate with clarity, emotion, and lasting impact.',
-    initials: 'NK',
-    gradient: 'from-slate-600 to-slate-400',
-
-  },
-  {
-    name: 'Daxis Patel',
-    role: 'Voice Artist & Script Writer',
-    bio: 'Professional voice-over production and script writing that gives brands a clear, compelling voice audiences remember.',
-    initials: 'DX',
-    gradient: 'from-slate-700 to-primary',
-
-  },
-  {
-    name: 'Dev Soni',
-    role: 'Videographer',
-    bio: 'Visual storytelling through short-form content that captures attention in seconds and builds brand identity frame by frame.',
-    initials: 'DE',
-    gradient: 'from-primary to-slate-600',
 
   },
   {
@@ -229,7 +195,7 @@ const Team: React.FC = () => (
           transition={{ duration: 0.6, delay: 0.2 }}
           className="text-white/60 text-lg max-w-2xl mx-auto"
         >
-          11 creative minds and strategic thinkers behind every brand we build, every campaign we run, and every result we deliver.
+          7 creative minds and strategic thinkers behind every brand we build, every campaign we run, and every result we deliver.
         </motion.p>
       </div>
 

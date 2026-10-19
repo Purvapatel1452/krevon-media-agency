@@ -62,7 +62,7 @@ const About: React.FC = () => {
       </div>
 
       {/* ── Founders strip ── */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-8">
+      <div className="grid grid-cols-1 gap-5 mb-8 max-w-2xl">
         {[
           {
             name: 'Nikhil Patel',
@@ -71,14 +71,6 @@ const About: React.FC = () => {
             photoFocus: '60% 20%',
             quote: 'We built Krevon to give every ambitious local brand the same quality of strategy and content that big companies get. Growth is not a privilege — it\'s a process.',
             delay: 0,
-          },
-          {
-            name: 'Darshan Sathwara',
-            role: 'Founder',
-            photo: '/darshan-sathwara.jpg',
-            photoFocus: 'center 12%',
-            quote: 'Content without strategy is just noise. Everything we create at Krevon is built around a plan — the right message, the right platform, the right time.',
-            delay: 0.12,
           },
         ].map((founder) => (
           <motion.div

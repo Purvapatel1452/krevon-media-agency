@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   },
 
   description:
-    "Krevon Media Agency — Mahesana's #1 premium brand building, social media marketing, Meta Ads, Google Ads, video production & podcast studio. Trusted by 25+ brands across Gujarat. Founded by Nikhil Patel & Darshan Sathwara.",
+    "Krevon Media Agency — Mahesana's #1 premium brand building, social media marketing, Meta Ads, Google Ads, video production & podcast studio. Trusted by 25+ brands across Gujarat. Founded by Nikhil Patel.",
 
   keywords: [
     // Branded
@@ -30,8 +30,6 @@ export const metadata: Metadata = {
     // People
     'Nikhil Patel', 'nikhil patel', 'nikhil patel media agency',
     'nikhil patel krevon', 'nikhil patel mahesana',
-    'Darshan Sathwara', 'darshan sathwara', 'darshan sathwara krevon',
-    'darshan sathwara media agency', 'darshan sathwara mahesana',
     // Location
     'Amazing Mahesana', 'amazing mahesana', 'amazing mehsana',
     'Mahesana', 'mahesana', 'Mehsana', 'mehsana',
@@ -86,7 +84,6 @@ export const metadata: Metadata = {
 
   authors: [
     { name: 'Nikhil Patel',     url: SITE_URL },
-    { name: 'Darshan Sathwara', url: SITE_URL },
   ],
 
   creator:   'Krevon Media Agency',
@@ -100,7 +97,7 @@ export const metadata: Metadata = {
     siteName: 'Krevon Media Agency',
     title:    'Krevon Media Agency | #1 Brand Building & Social Media Marketing in Mahesana',
     description:
-      "Mahesana's premier media agency — brand building, social media marketing, Meta Ads, Google Ads, video production & podcast studio. Co-Founded by Nikhil Patel & Darshan Sathwara.",
+      "Mahesana's premier media agency — brand building, social media marketing, Meta Ads, Google Ads, video production & podcast studio. Founded by Nikhil Patel.",
     images: [
       {
         url:    OG_IMAGE,
